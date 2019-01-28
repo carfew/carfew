@@ -16,11 +16,13 @@
     "url": "https://github.com/carfew/carfew/issues"
   },
   "dependencies": {
+    "bcryptjs": "false2.4.3",
     "dotenv": "6.1.0",
     "express": "4.16.4",
     "express-session": "1.15.6",
     "joi": "14.1.0",
-    "mongoose": "false5.4.7"
+    "mongoose": "false5.4.7",
+    "mongoose-unique-validator": "false2.0.2"
   },
   "devDependencies": {
     "chai": "4.2.0",
