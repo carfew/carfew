@@ -15,8 +15,8 @@ This is an open-source project! Watch this repo for future updates 😉
 Our core developers are:
 - Erik Batista - Front End Dev, UI/UX Design - HTML, CSS, Handlebars, Sketch
 - Colleen Ni - Back End Dev - Node, Express, MongoDB
-- Wenzel Lowe - Back End Dev / API Integration - Node, Express, MongoDB, Google Maps API
-- Faith Chikwekwe - Back End Dev / Product Manager - Node, Express, MongoDB, HTML, CSS, Handlebars
+- Wenzel Lowe - Back End Dev, API Integration - Node, Express, MongoDB, Google Maps API
+- Faith Chikwekwe - Back End Dev, Product Manager - Node, Express, MongoDB, HTML, CSS, Handlebars
 
 ## Why did we build Carfew? 🚗
 We all believe that climate change is an inevitable reality that we have a responsibility to do something about. Fewer cars on the road is one way to help curb those effects.
