@@ -1,36 +1,44 @@
 {
   "name": "carfew",
-  "version": "0.0.1",
-  "description": "carfew",
+  "version": "1.0.0",
+  "description": "Carfew - Fewer cars, more friends 🤝",
   "main": "index.js",
+  "directories": {
+      "start": "node server.js",
+      "test": "mocha --exit tests/*"
+  },
   "scripts": {
-    "test": "cross-env NODE_ENV=test ./node_modules/.bin/mocha --ui bdd --reporter spec --colors auth --recursive"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/carfew/carfew.git"
   },
-  "author": "carfew",
-  "license": "MIT",
+  "author": "",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/carfew/carfew/issues"
   },
+  "homepage": "https://github.com/carfew/carfew#readme",
   "dependencies": {
-    "bcryptjs": "false2.4.3",
-    "dotenv": "6.1.0",
-    "express": "4.16.4",
-    "express-session": "1.15.6",
-    "joi": "14.1.0",
-    "mongoose": "false5.4.7",
-    "mongoose-unique-validator": "false2.0.2"
+    "bcrypt": "^3.0.3",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.3",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.0",
+    "jsonwebtoken": "^8.4.0",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.4.7"
   },
   "devDependencies": {
-    "chai": "4.2.0",
-    "chai-http": "4.2.0",
-    "cross-env": "5.2.0",
-    "eslint": "5.9.0",
-    "eslint-config-airbnb-base": "13.1.0",
-    "eslint-plugin-import": "2.14.0",
-    "mocha": "5.2.0"
+    "chai": "^4.2.0",
+    "chai-http": "^4.2.1",
+    "eslint": "^5.12.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "mocha": "^5.2.0"
   }
 }
