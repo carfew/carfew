@@ -24,3 +24,4 @@ GET one ride - shows one ride # passing the whole ride obj
 GET all rides - shows all rides that have been posted
 POST one ride (rider posts their desired ride)
 - req.body will contain origin, dest, start range, and user id
+ :D
