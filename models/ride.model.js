@@ -2,17 +2,22 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 
-const Schedule = new Schema({
+const Ride = new Schema({
     createdAt: { type: Date },
     updatedAt: { type: Date },
-    passenger: { type: Schema.Types.ObjectId, required: true, ref: 'User' },
+    rider: { type: Schema.Types.ObjectId, required: true, ref: 'User' },
     driver: { type: Schema.Types.ObjectId, required: true, ref: 'User' },
-    origin: { type: String, },
-    distance: { type: Number, },
+    origin: { type: Schema.Types.Mixed, required: true },
+    // Define the pickup window start and end times
+    pickupStart: { type: Date, required: true },
+    pickupEnd: { type: Date, required: true },
+    expiration: { type: Date },
+    status: { type: String, required: true },
+    rating: { type: Number },
 });
 
 
-Schedule.pre('save', async (next) => {
+Ride.pre('save', async (next) => {
     // Make createdAt and updatedAt
     const now = new Date();
     this.updatedAt = now;
@@ -23,8 +28,8 @@ Schedule.pre('save', async (next) => {
     next();
 });
 
-Schedule.pre('update', function updateTime() {
+Ride.pre('update', function updateTime() {
     this.update({}, { $set: { updatedAt: new Date() } });
 });
 
-module.exports = mongoose.model('Group', Schedule);
+module.exports = mongoose.model('Group', Ride);
