@@ -4,8 +4,8 @@
   "description": "Carfew - Fewer cars, more friends 🤝",
   "main": "index.js",
   "directories": {
-      "start": "node server.js",
-      "test": "mocha --exit tests/*"
+    "start": "node server.js",
+    "test": "mocha --exit tests/*"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -29,6 +29,7 @@
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
     "express-handlebars": "^3.0.0",
+    "joi": "^14.3.1",
     "jsonwebtoken": "^8.4.0",
     "method-override": "^3.0.0",
     "mongoose": "^5.4.7"

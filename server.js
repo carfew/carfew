@@ -37,7 +37,7 @@ db.once('open', () => {
 });
 
 /** Require controller(s) */
-require('./controllers/schedule.controller.js')(app);
+require('./controllers/rides.controller.js')(app);
 
 /** Port listener */
 app.listen(PORT, () => {
