@@ -8,6 +8,7 @@ import Button from '@material-ui/core/Button';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 import MomentUtils from '@date-io/moment';
 import { MuiPickersUtilsProvider, TimePicker, DatePicker } from 'material-ui-pickers';
+import axios from 'axios';
 
 import LocationSearchInput from './LocationSearchInput.jsx';
 
@@ -26,7 +27,10 @@ const styles = {
     padding: 20,
     boxSizing: 'border-box',
     marginTop:20,
-    borderRadius: 10,
+    borderRadius: 5,
+  },
+  grid: {
+    alignSelf: 'flex-start'
   }
 }
 
@@ -37,8 +41,7 @@ class CarfewWindow extends Component {
     this.state = {
       origin: this.props.origin,
       dest: this.props.dest,
-      fromDate: new Date(),
-      toDate: new Date() + 5000,
+      pickupStart: new Date(),
     }
   }
 
@@ -46,29 +49,40 @@ class CarfewWindow extends Component {
     this.setState({ selectedDate: date });
   };
 
+  submitRide = async () => {
+    const res = await axios.post('http://localhost:4040/rides', {
+      origin: this.state.origin,
+      destination: this.state.dest,
+      pickupStart: this.state.pickupStart,
+    })
+
+    console.log(res);
+  }
+
 
   render() {
     const { classes } = this.props; 
-    const { fromDate, toDate } = this.state;
+    const { pickupStart, toDate } = this.state;
     return (
       <div bordered={false} className={classes.root}>
         <Typography variant="h4">Schedule a Ride</Typography>
         <LocationSearchInput origin changeAddress={this.props.changeAddress}/>
         <LocationSearchInput dest changeAddress={this.props.changeAddress}/>
-        <MuiPickersUtilsProvider utils={MomentUtils}>
+        <MuiPickersUtilsProvider utils={MomentUtils} >
           <Grid container className={classes.grid} justify="space-around">
             <TimePicker
               margin="normal"
-              label="Start"
-              value={fromDate}
+              label="Pick Up Time"
+              value={pickupStart}
               onChange={this.handleDateChange}
-            />
+              style={{marginRight: 'auto'}}
+            />{/*
             <TimePicker
               margin="normal"
               label="Ends"
               value={toDate}
               onChange={this.handleDateChange}
-            />
+            />*/}
           </Grid>
         </MuiPickersUtilsProvider>
         {this.props.route && 
@@ -77,10 +91,10 @@ class CarfewWindow extends Component {
           <Typography variant="subtitle2">Ride Length: {this.props.route.duration.text}</Typography>
         </div>}
         <div style={{display:'flex', width: '100%', marginTop: 20}}>
-          <Button variant="outlined" color="secondary">Cancel</Button>
-          <Fab color="primary" className={classes.fab} disabled={!(this.props.origin.hasOwnProperty('lat') && this.props.dest.hasOwnProperty('lat'))}>
-            <NavigateNextIcon />
-          </Fab>
+          <Button color="secondary">Cancel</Button>
+          <Button onClick={this.submitRide} variant="contained" color="primary" className={classes.fab} disabled={!(this.props.origin.hasOwnProperty('lat') && this.props.dest.hasOwnProperty('lat'))}>
+            Submit
+          </Button>
         </div>
       </div> 
     );

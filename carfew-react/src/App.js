@@ -30,7 +30,9 @@ const styles = {
 
 const theme = createMuiTheme({
   palette: {
-    primary: indigo
+    primary: {
+      main: indigo[300]
+    }
   }
 })
 
