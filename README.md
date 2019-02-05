@@ -1,8 +1,8 @@
 # Carfew - Fewer cars, more friends 🤝
-<!-- <img src="public/img/favicon_carfew.png"
+<img src="public/img/favicon_carfew.png"
      alt="Carfew Favicon"
-     style="display: inline; margin-left: auto; margin-right; auto;"
-     width="200" /> -->
+     align="middle"
+     width="200" />
 
 ## What is Carfew? 🚘
 Carfew is a new, innovative ride-sharing solution for those who want to meet new people 👋. With Carfew, you drive to make connections and meet people who like the same things that you do.
