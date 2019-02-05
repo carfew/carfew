@@ -40,8 +40,25 @@ class LocationSearchInput extends React.Component {
 
   handleSelect = address => {
     geocodeByAddress(address)
-      .then(results => this.setState({address:results[0].formatted_address, menuOpen: false}))
-      .then(latLng => {console.log('Success', latLng)})
+      .then(async (results) => {
+        // console.log(results)
+        await this.setState({
+          address:results[0].formatted_address,
+          adrObject:results[0],
+          menuOpen: false});
+        return getLatLng(results[0])
+      })
+      .then(async (latLng) => {
+        // console.log('Success', latLng);
+        await this.setState({
+          adrObject: {
+            ...this.state.adrObject,
+            lat: latLng.lat,
+            lng: latLng.lng
+          }
+        })
+        this.props.changeAddress(this.state.adrObject, this.props.origin ? 'origin' : 'dest');
+      })
       .catch(error => console.error('Error', error));
   };
 
@@ -53,7 +70,7 @@ class LocationSearchInput extends React.Component {
         onSelect={this.handleSelect}
       >
         {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
-          <div style={{position:'relative'}}>
+          <div style={{position:'relative', flex: 1, width: '100%'}}>
             <TextField
               id="outlined-full-width"
               label={this.props.origin ? 'origin' : 'destination'}
