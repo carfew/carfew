@@ -3,8 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@date-io/moment": "false1.0.2",
     "@material-ui/core": "false3.9.1",
+    "@material-ui/icons": "false3.0.2",
     "classnames": "false2.2.6",
+    "date-fns": "2.0.0-alpha.25",
+    "material-ui-pickers": "false2.1.2",
+    "moment": "false2.24.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-google-maps": "false9.4.5",
