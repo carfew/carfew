@@ -24,8 +24,8 @@ module.exports = (app) => {
     // CREATE one ride
     app.post('/rides', (req, res) => {
         Ride.create(req.body)
-            .then(() => {
-                res.redirect('/rides');
+            .then((ride) => {
+                res.send(ride);
             })
             .catch((err) => {
                 console.log(err.message);

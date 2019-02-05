@@ -10,4 +10,8 @@ const router = express.Router(); // eslint-disable-line new-cap
 //   res.redirect('/');
 // });
 
+router.get('/', (req, res) => {
+  res.sendFile(__dirname + '/carfew-react/build/index.html');
+})
+
 module.exports = router;

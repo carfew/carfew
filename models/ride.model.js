@@ -5,14 +5,15 @@ const { Schema } = mongoose;
 const Ride = new Schema({
     createdAt: { type: Date },
     updatedAt: { type: Date },
-    rider: { type: Schema.Types.ObjectId, required: true, ref: 'User' },
-    driver: { type: Schema.Types.ObjectId, required: true, ref: 'User' },
+    // rider: { type: Schema.Types.ObjectId, required: true, ref: 'User' },
+    // driver: { type: Schema.Types.ObjectId, required: true, ref: 'User' },
     origin: { type: Schema.Types.Mixed, required: true },
+    destination: { type: Schema.Types.Mixed, required: true },
     // Define the pickup window start and end times
     pickupStart: { type: Date, required: true },
-    pickupEnd: { type: Date, required: true },
+    // pickupEnd: { type: Date, required: true },
     expiration: { type: Date },
-    status: { type: String, required: true },
+    status: { type: String, default: 'created' },
     rating: { type: Number },
 });
 
