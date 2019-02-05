@@ -31,4 +31,15 @@ module.exports = (app) => {
                 console.log(err.message);
             });
     });
+
+    // DELETE one ride
+    app.delete('/rides/:id', (req, res) => {
+        Ride.deleteOne(req.params.id)
+            .then(() => {
+                res.redirect('/rides');
+            })
+            .catch((err) => {
+                console.log(err.message);
+            });
+    });
 };

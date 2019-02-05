@@ -8,8 +8,8 @@
     "test": "mocha --exit tests/*"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "test": "mocha --exit tests/*"
   },
   "repository": {
     "type": "git",
@@ -18,7 +18,7 @@
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/carfew/carfew/issues"
+    "url": "https://github.com/carfew/carfew"
   },
   "homepage": "https://github.com/carfew/carfew#readme",
   "dependencies": {
