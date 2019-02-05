@@ -66,12 +66,19 @@ The user can create a ride by specifying the origin, the destination and the pic
 ### '/rides:id' - read/show ONE ride
 The user can read a single ride by clicking on it from the index view or after creating a ride. While viewing the ride, they have the option to accept the ride, if another use has posted it. They also have the option to delete the ride if it is their own.
 
-### '/rides' - show ALL rides
-The user can see all rides posted by users within the app. This is where the user can select rides to view in detail.
 ### '/rides/:id' - delete ONE ride
 The user can delete their own posted rides. If the user goes to the show ONE route, and the ride is their own, then an option to delete should be displayed.
 
-## API Integration (What APIs are we using?)
+### '/rides' - show ALL rides
+The user can see all rides posted by users within the app. This is where the user can select rides to view in detail.
+
+### '/sign-up' - show sign-up template
+### '/sign-up' - create ONE user
+### '/login' - show login template
+### '/login' - show ONE user
+### '/logout' - log user out
+
+## API Integration - What APIs are we using?
 - Google Maps API - used for displaying rides and for creating ride objects.
 
 ## Running
@@ -79,3 +86,4 @@ The user can delete their own posted rides. If the user goes to the show ONE rou
 ## Testing
 
 ## Additional Contact Info
+### For Carfew related inquiries send an email to
