@@ -8,7 +8,8 @@
     "test": "mocha --exit tests/*"
   },
   "scripts": {
-    "start": "node server.js",
+    "build": "cd carfew-react && yarn build && cd ..",
+    "start": "yarn build && node server.js",
     "test": "mocha --exit tests/*"
   },
   "repository": {
