@@ -1,6 +1,4 @@
-# Carfew
-
-## Fewer cars, more friends 🤝
+# Carfew - Fewer cars, more friends 🤝
 
 ## What is Carfew? 🚘
 Carfew is a new, innovative ride-sharing solution for those who want to meet new people 👋. With Carfew, you drive to make connections and meet people who like the same things that you do.
