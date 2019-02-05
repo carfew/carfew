@@ -74,7 +74,8 @@ The user can see all rides posted by users within the app. This is where the use
 The user can delete their own posted rides. If the user goes to the show ONE route, and the ride is their own, then an option to delete should be displayed.
 
 ## API Integration (What APIs are we using?)
-- Google Maps API - used for displaying rides and for creating ride objects. 
+- Google Maps API - used for displaying rides and for creating ride objects.
+
 ## Running
 
 ## Testing
