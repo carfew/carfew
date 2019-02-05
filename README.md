@@ -1,4 +1,16 @@
 # Carfew - Fewer cars, more friends 🤝
+
+[About Carfew](https://github.com/carfew/carfew/tree/dev#what-is-carfew-)
+[The Team](https://github.com/carfew/carfew/tree/dev#who-are-the-carfew-dev-team--)
+[File Structure](https://github.com/carfew/carfew/tree/dev#file-structure-)
+[Endpoints](https://github.com/carfew/carfew/tree/dev#endpoints)
+[--Rides Endpoints](https://github.com/carfew/carfew/tree/dev#rides)
+[--Auth Endpoints](https://github.com/carfew/carfew/tree/dev#authentication)
+[APIs](https://github.com/carfew/carfew/tree/dev#api-integration---what-apis-are-we-using)
+[Running](https://github.com/carfew/carfew/tree/dev#running)
+[Testing](https://github.com/carfew/carfew/tree/dev#testing)
+[Contact Info](https://github.com/carfew/carfew/tree/dev#additional-contact-info)
+
 <img src="public/img/favicon_carfew.png"
      alt="Carfew Favicon"
      align="middle"
@@ -13,6 +25,11 @@ In future iterations of this app, we would like to make communities dynamic with
 
 This is an open-source project! Watch this repo for future updates 😉
 
+## Why did we build Carfew? 🚗
+We all believe that climate change is an inevitable reality that we have a responsibility to do something about. Fewer cars on the road is one way to help curb those effects.
+
+Additionally, we are interested in understanding city infrastructure and being good citizens of the city we live in, San Francisco ❤️ . Building an app that can help to limit the number of vehicles moving around the city will help make the air more breathable and make the streets safer for everyone.
+
 ## Who are the Carfew dev team? 👩‍💻 👨‍💻
 Our core developers are:
 - Erik Batista - Front End Dev, UI/UX Design - HTML, CSS, Handlebars, Sketch
@@ -20,10 +37,6 @@ Our core developers are:
 - Wenzel Lowe - Full Stack Dev, API Integration - Node, Express, MongoDB, React, Google Maps API
 - Faith Chikwekwe - Back End Dev, Product Manager - Node, Express, MongoDB, HTML, CSS, Handlebars
 
-## Why did we build Carfew? 🚗
-We all believe that climate change is an inevitable reality that we have a responsibility to do something about. Fewer cars on the road is one way to help curb those effects.
-
-Additionally, we are interested in understanding city infrastructure and being good citizens of the city we live in, San Francisco ❤️ . Building an app that can help to limit the number of vehicles moving around the city will help make the air more breathable and make the streets safer for everyone.
 
 ## File Structure 🗂
 ```
@@ -88,6 +101,7 @@ If successful, a JWT token will be created to keep them logged in for the durati
 
 #### '/login' - show login template
 User can see the login template and enter their login credentials.
+
 #### '/login' - show ONE user
 User login credentials are validated and processed through a POST route. Their username OR email address OR phone number must exactly match the information that we have on file. Their password must also be valid.
 
