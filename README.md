@@ -64,23 +64,39 @@ root/
 ```
 
 ## Endpoints
-### '/rides' - create ONE ride
+### Rides
+#### '/rides' - create ONE ride
 The user can create a ride by specifying the origin, the destination and the pickup window. The ride itself creates a mixed type object that can interact with the Google Maps API to display on a map.
 
-### '/rides:id' - read/show ONE ride
+#### '/rides/:id' - read/show ONE ride
 The user can read a single ride by clicking on it from the index view or after creating a ride. While viewing the ride, they have the option to accept the ride, if another use has posted it. They also have the option to delete the ride if it is their own.
 
-### '/rides/:id' - delete ONE ride
+#### '/rides/:id' - delete ONE ride
 The user can delete their own posted rides. If the user goes to the show ONE route, and the ride is their own, then an option to delete should be displayed.
 
-### '/rides' - show ALL rides
+#### '/rides' - show ALL rides
 The user can see all rides posted by users within the app. This is where the user can select rides to view in detail.
 
-### '/sign-up' - show sign-up template
-### '/sign-up' - create ONE user
-### '/login' - show login template
-### '/login' - show ONE user
-### '/logout' - log user out
+### Authentication
+#### '/sign-up' - show sign-up template
+User can see the sign-up template and enter their sign-up information.
+
+#### '/sign-up' - create ONE user
+User sign-up information is validated and processed through a POST route. Their email address, username and phone number must all be unique in order for the login to be successful. They must also choose a password.
+
+If successful, a JWT token will be created to keep them logged in for the duration of the session. This route will redirect to the rides index.
+
+#### '/login' - show login template
+User can see the login template and enter their login credentials.
+#### '/login' - show ONE user
+User login credentials are validated and processed through a POST route. Their username OR email address OR phone number must exactly match the information that we have on file. Their password must also be valid.
+
+If successful, a JWT token will be created to keep them logged in for the duration of the session. This route will redirect to the rides index.
+
+#### '/logout' - log user out
+The route will destroy the user's JWT token removing authorization to create and delete rides and interact with their communities.
+
+The user will be routed back to the root route.
 
 ## API Integration - What APIs are we using?
 - Google Maps API - used for displaying rides and for creating ride objects.
@@ -88,6 +104,8 @@ The user can see all rides posted by users within the app. This is where the use
 ## Running
 
 ## Testing
+We used Mocha and Chai for testing. Tests are stored in /tests directory.
+
+To run tests for this project, clone the project and then type the command 'npm test' or 'mocha' into your console from the project root folder.
 
 ## Additional Contact Info
-### For Carfew related inquiries send an email to
