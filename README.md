@@ -1,5 +1,5 @@
 # Carfew - Fewer cars, more friends 🤝
----------------------------------------------------------------------------------------------|<img src="public/img/favicon_carfew.png"
+|---------------------------------------------------------------------------------------------|<img src="public/img/favicon_carfew.png"
      alt="Carfew Favicon"
      align="middle"
      width="200" />
