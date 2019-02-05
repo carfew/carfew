@@ -1,11 +1,8 @@
 # Carfew - Fewer cars, more friends 🤝
-|----------------------------------------------------------------------------------------------|
-| * [About Carfew](https://github.com/carfew/carfew/tree/dev#what-is-carfew-)                  |<img src="public/img/favicon_carfew.png"
-     alt="Carfew Favicon"
-     align="middle"
-     width="200" />
-| * [The Team](https://github.com/carfew/carfew/tree/dev#who-are-the-carfew-dev-team--)        |
-| * [File Structure](https://github.com/carfew/carfew/tree/dev#file-structure-)                |
+
+* [About Carfew](https://github.com/carfew/carfew/tree/dev#what-is-carfew-)
+* [The Team](https://github.com/carfew/carfew/tree/dev#who-are-the-carfew-dev-team--)
+* [File Structure](https://github.com/carfew/carfew/tree/dev#file-structure-)
 * [Endpoints](https://github.com/carfew/carfew/tree/dev#endpoints)
   * [Rides Endpoints](https://github.com/carfew/carfew/tree/dev#rides)
   * [Auth Endpoints](https://github.com/carfew/carfew/tree/dev#authentication)
@@ -14,7 +11,10 @@
 * [Testing](https://github.com/carfew/carfew/tree/dev#testing)
 * [Contact Info](https://github.com/carfew/carfew/tree/dev#additional-contact-info)
 
-
+<img src="public/img/favicon_carfew.png"
+     alt="Carfew Favicon"
+     align="middle"
+     width="200" />
 
 ## What is Carfew? 🚘
 Carfew is a new, innovative ride-sharing solution for those who want to meet new people 👋. With Carfew, you drive to make connections and meet people who like the same things that you do.
