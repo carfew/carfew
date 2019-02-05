@@ -1,6 +1,6 @@
 <img src="public/img/favicon_carfew.png"
      alt="Carfew Favicon"
-     align="middle"
+     text-align="center"
      width="200" />
 
 # Carfew - Fewer cars, more friends 🤝
