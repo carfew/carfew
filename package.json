@@ -8,6 +8,7 @@
     "test": "mocha --exit tests/*"
   },
   "scripts": {
+    "starter": "cd carfew-react && npm install",
     "build": "cd carfew-react && npm run build && cd ..",
     "start": "npm run build && node server.js",
     "test": "mocha --exit tests/*"
