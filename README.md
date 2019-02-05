@@ -28,10 +28,12 @@ Additionally, we are interested in understanding city infrastructure and being g
 root/
 |
 |-- controllers/                # routing and logic
-        |-- schedule.controller.js
+        |-- ride.controller.js
+        |-- user.controller.js
+        |-- auth.controller.js
 |
 |-- models/                     # database models
-      |-- schedule.model.js
+      |-- ride.model.js
       |-- user.model.js
 |
 |-- views/                      # handlebars templates
@@ -40,24 +42,39 @@ root/
       |-- partials/
 |
 |-- tests/                      # unit testing
-      |-- schedule.test.js
-      |-- user.test.js
+      |-- rides.test.js
+      |-- users.test.js
+      |-- auth.test.js
 |
-|-- config/
+|-- config/                     # dev and configuration
 |     |-- config.js
       |-- express.js
 |
-|-- public/                     # public folder path for static content
+|-- public/                     # public folder for static content
       |-- css/
       |-- js/
+      |-- img/
 |
+|-- env files                   # environment variables
+|-- index.js                    # dev server
+|-- notes.md                    # unorganized notes; pre-Kanban board
 |-- README.md
 ```
 
 ## Endpoints
+### '/rides' - create ONE ride
+The user can create a ride by specifying the origin, the destination and the pickup window. The ride itself creates a mixed type object that can interact with the Google Maps API to display on a map.
+
+### '/rides:id' - read/show ONE ride
+The user can read a single ride by clicking on it from the index view or after creating a ride. While viewing the ride, they have the option to accept the ride, if another use has posted it. They also have the option to delete the ride if it is their own.
+
+### '/rides' - show ALL rides
+The user can see all rides posted by users within the app. This is where the user can select rides to view in detail.
+### '/rides/:id' - delete ONE ride
+The user can delete their own posted rides. If the user goes to the show ONE route, and the ride is their own, then an option to delete should be displayed.
 
 ## API Integration (What APIs are we using?)
-
+- Google Maps API - used for displaying rides and for creating ride objects. 
 ## Running
 
 ## Testing
