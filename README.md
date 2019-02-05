@@ -15,7 +15,7 @@ This is an open-source project! Watch this repo for future updates 😉
 Our core developers are:
 - Erik Batista - Front End Dev, UI/UX Design - HTML, CSS, Handlebars, Sketch
 - Colleen Ni - Back End Dev - Node, Express, MongoDB
-- Wenzel Lowe - Full Stack Dev, API Integration - Node, Express, React, Google Maps API
+- Wenzel Lowe - Full Stack Dev, API Integration - Node, Express, MongoDB, React, Google Maps API
 - Faith Chikwekwe - Back End Dev, Product Manager - Node, Express, MongoDB, HTML, CSS, Handlebars
 
 ## Why did we build Carfew? 🚗
