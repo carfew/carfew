@@ -1,11 +1,11 @@
 # Carfew - Fewer cars, more friends 🤝
-|---------------------------------------------------------------------------------------------|<img src="public/img/favicon_carfew.png"
+|----------------------------------------------------------------------------------------------|
+| * [About Carfew](https://github.com/carfew/carfew/tree/dev#what-is-carfew-)                  |<img src="public/img/favicon_carfew.png"
      alt="Carfew Favicon"
      align="middle"
      width="200" />
-| * [About Carfew](https://github.com/carfew/carfew/tree/dev#what-is-carfew-)                  |
 | * [The Team](https://github.com/carfew/carfew/tree/dev#who-are-the-carfew-dev-team--)        |
-* [File Structure](https://github.com/carfew/carfew/tree/dev#file-structure-)                |
+| * [File Structure](https://github.com/carfew/carfew/tree/dev#file-structure-)                |
 * [Endpoints](https://github.com/carfew/carfew/tree/dev#endpoints)
   * [Rides Endpoints](https://github.com/carfew/carfew/tree/dev#rides)
   * [Auth Endpoints](https://github.com/carfew/carfew/tree/dev#authentication)
