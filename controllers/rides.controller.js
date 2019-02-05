@@ -4,14 +4,14 @@ const Ride = require('../models/ride.model');
 module.exports = (app) => {
     // GET all rides
     app.get('/rides', (req, res) => {
-        console.log('here');
         Ride.find({})
             .then((rides) => {
-                console.log('here again');
-                res.send('rides: ', rides);
+                console.log(rides);
+                res.send({rides});
             })
             .catch((err) => {
                 console.log(err.message);
+                res.status(400).send(err.message)
             });
     });
     // SHOW one ride
@@ -23,9 +23,10 @@ module.exports = (app) => {
 
     // CREATE one ride
     app.post('/rides', (req, res) => {
+        // console.log(req.body);
         Ride.create(req.body)
             .then((ride) => {
-                res.send(ride);
+                res.send({rideId: ride._id});
             })
             .catch((err) => {
                 console.log(err.message);

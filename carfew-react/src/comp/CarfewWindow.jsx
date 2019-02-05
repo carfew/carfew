@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import withStyles from 'react-jss';
+import axios from 'axios';
 import PlacesAutocomplete from 'react-places-autocomplete';
 
 
 import NewRide from './NewRide.jsx';
+import AllRides from './AllRides.jsx';
 
 import LocationSearchInput from './LocationSearchInput.jsx';
 
@@ -28,19 +30,41 @@ class CarfewWindow extends Component {
     this.state = {
       origin: this.props.origin,
       dest: this.props.dest,
+      newRide: false,
+      rides: []
     }
+  }
+
+  changeAppState = () => {
+    this.setState({
+      newRide: !this.state.newRide,
+    })
+  }
+
+  getRides = async () => {
+    const rides = await axios.get('/rides');
+    this.setState({
+      rides,
+    })
   }
 
   render() {
     const { classes } = this.props; 
     return (
       <div bordered={false} className={classes.root}>
-        <NewRide 
-          origin={this.props.origin} 
-          dest={this.props.dest} 
-          changeAddress={this.props.changeAddress} 
-          route={this.props.route}
-          />
+        { this.state.newRide ?
+          <NewRide 
+            origin={this.props.origin} 
+            dest={this.props.dest} 
+            changeAddress={this.props.changeAddress} 
+            route={this.props.route}
+            changeAppState={this.changeAppState}
+          /> :
+          <AllRides 
+            changeAppState={this.changeAppState}
+            rides={this.state.rides}
+           />
+        } 
       </div> 
     );
   }

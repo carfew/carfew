@@ -33,4 +33,4 @@ Ride.pre('update', function updateTime() {
     this.update({}, { $set: { updatedAt: new Date() } });
 });
 
-module.exports = mongoose.model('Group', Ride);
+module.exports = mongoose.model('Ride', Ride);
