@@ -1,15 +1,15 @@
 # Carfew - Fewer cars, more friends 🤝
 
-[About Carfew](https://github.com/carfew/carfew/tree/dev#what-is-carfew-)
-[The Team](https://github.com/carfew/carfew/tree/dev#who-are-the-carfew-dev-team--)
-[File Structure](https://github.com/carfew/carfew/tree/dev#file-structure-)
-[Endpoints](https://github.com/carfew/carfew/tree/dev#endpoints)
-[--Rides Endpoints](https://github.com/carfew/carfew/tree/dev#rides)
-[--Auth Endpoints](https://github.com/carfew/carfew/tree/dev#authentication)
-[APIs](https://github.com/carfew/carfew/tree/dev#api-integration---what-apis-are-we-using)
-[Running](https://github.com/carfew/carfew/tree/dev#running)
-[Testing](https://github.com/carfew/carfew/tree/dev#testing)
-[Contact Info](https://github.com/carfew/carfew/tree/dev#additional-contact-info)
+* [About Carfew](https://github.com/carfew/carfew/tree/dev#what-is-carfew-)
+* [The Team](https://github.com/carfew/carfew/tree/dev#who-are-the-carfew-dev-team--)
+* [File Structure](https://github.com/carfew/carfew/tree/dev#file-structure-)
+* [Endpoints](https://github.com/carfew/carfew/tree/dev#endpoints)
+⋅⋅* [Rides Endpoints](https://github.com/carfew/carfew/tree/dev#rides)
+⋅⋅* [Auth Endpoints](https://github.com/carfew/carfew/tree/dev#authentication)
+* [APIs](https://github.com/carfew/carfew/tree/dev#api-integration---what-apis-are-we-using)
+* [Running](https://github.com/carfew/carfew/tree/dev#running)
+* [Testing](https://github.com/carfew/carfew/tree/dev#testing)
+* [Contact Info](https://github.com/carfew/carfew/tree/dev#additional-contact-info)
 
 <img src="public/img/favicon_carfew.png"
      alt="Carfew Favicon"
