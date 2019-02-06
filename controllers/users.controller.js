@@ -1,15 +1,14 @@
 const User = require('../models/user.model');
 
 module.exports = (app) => {
-
-    //This should display the user profile
+    // This should display the user profile
     app.get('/users/:id', (req, res) => {
         User.findById(req.params.id, (err, user) => {
             res.send('user: ', user);
         });
     });
 
-    //This should delete the the user and clear the user's session
+    // This should delete the the user and clear the user's session
     app.delete('/users/:id', (req, res) => {
         User.deleteOne(req.params.id)
             .then(() => {
@@ -20,5 +19,4 @@ module.exports = (app) => {
             });
         res.clearCookie('rideToken');
     });
-
-}
+};

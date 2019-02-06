@@ -48,6 +48,12 @@ UserSchema.pre('save', function createUser(next) {
     if (!user.isModified('password')) {
         return next();
     }
+    bcrypt.genSalt(10, (err, salt) => {
+        bcrypt.hash(user.password, salt, (err, hash) => {
+            user.password = hash;
+            next();
+        });
+    });
     return null;
 });
 
