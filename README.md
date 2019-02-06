@@ -2,7 +2,7 @@
     <img src="public/img/favicon_carfew.png"
          alt="Carfew Favicon"
          width="200" />
-
+</p>
 
 # Carfew - Fewer cars, more friends 🤝
 
@@ -16,7 +16,6 @@
 * [Running](https://github.com/carfew/carfew/tree/dev#running)
 * [Testing](https://github.com/carfew/carfew/tree/dev#testing)
 * [Contact Info](https://github.com/carfew/carfew/tree/dev#additional-contact-info)
-</p>
 
 ## What is Carfew? 🚘
 Carfew is a new, innovative ride-sharing solution for those who want to meet new people 👋. With Carfew, you drive to make connections and meet people who like the same things that you do.
@@ -115,7 +114,9 @@ The route will destroy the user's JWT token removing authorization to create and
 The user will be routed back to the root route.
 
 ## API Integration - What APIs are we using?
-- Google Maps API - used for displaying rides and for creating ride objects.
+- Google Places for accurate location search.
+- Google Directions to get distance and directions between the origin and the destination.
+- Google Maps to render the map so that the user can visualize their ride.
 
 ## Running
 
