@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import withStyles from 'react-jss';
 import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
 import Icon from '@material-ui/core/Icon';
 
 import PersonPin from '@material-ui/icons/PersonPin';
@@ -34,9 +35,12 @@ class AllRides extends Component {
               <div className={classes.userImage}>
                 <PersonPin style={{height: '100%', fontSize:'3em'}} />
               </div>
+              <div className={classes.userInfo}>
+                <Typography variant="h6">Bob</Typography>
+              </div>{/*
               <h4>{ride.origin.formatted_address}</h4>
               <h6>to</h6>
-              <h4>{ride.destination.formatted_address}</h4>
+              <h4>{ride.destination.formatted_address}</h4>*/}
             </div>
           )
         })}
