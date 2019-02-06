@@ -62,15 +62,15 @@ class MapComponent extends React.Component{
         center={ { lat:  37.8791998, lng: -122.4203375 } }
         defaultOptions={{ styles: mapStyle, fullscreenControl: false, mapTypeControl: false, streetViewControl: false }}
         >
-        {this.state.directions ? <DirectionsRenderer directions={this.state.directions} /> : null}
+        {this.state.directions && this.props.newRide ? <DirectionsRenderer directions={this.state.directions} /> : null}
         {props.rides && !this.props.newRide ? 
           props.rides.map((ride) => {
-            return <Marker position={{lat: ride.origin.lat, lng: ride.destination.lng}} />
+            return <Marker position={{lat: ride.origin.lat, lng: ride.origin.lng}} />
           }) : null
 
         }
-        {props.origin && !this.state.directions && <Marker position={{ lat: props.origin.lat, lng: props.origin.lng }} />}
-        {props.dest && !this.state.directions &&<Marker position={{ lat: props.dest.lat, lng: props.dest.lng }} />}
+        {props.origin && !this.state.directions && this.props.newRide && <Marker position={{ lat: props.origin.lat, lng: props.origin.lng }} />}
+        {props.dest && !this.state.directions && this.props.newRide &&<Marker position={{ lat: props.dest.lat, lng: props.dest.lng }} />}
       </GoogleMap>
     );
   }

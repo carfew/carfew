@@ -50,7 +50,7 @@ class CarfewWindow extends Component {
   };
 
   submitRide = async () => {
-    const res = await axios.post('http://localhost:3000/rides', {
+    const res = await axios.post('/rides', {
       origin: this.props.origin,
       destination: this.props.dest,
       pickupStart: this.state.pickupStart,
@@ -61,6 +61,7 @@ class CarfewWindow extends Component {
     })
 
     this.props.changeAppState();
+    this.props.getRides();
   }
 
 

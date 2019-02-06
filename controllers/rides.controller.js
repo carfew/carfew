@@ -1,3 +1,4 @@
+const jwt = require('jsonwebtoken');
 const config = require('../config/config');
 const Ride = require('../models/ride.model');
 
@@ -5,6 +6,7 @@ module.exports = (app) => {
     // GET all rides
     app.get('/rides', (req, res) => {
         Ride.find({})
+            .populate('rider')
             .then((rides) => {
                 // console.log(rides);
                 res.send({ rides });
@@ -15,16 +17,15 @@ module.exports = (app) => {
             });
     });
     // SHOW one ride
-    app.get('/rides/:id', (req, res) => {
-        Ride.findById(req.params.id, (err, ride) => {
-            res.send('ride: ', ride);
-        });
+    app.get('/rides/:id', async (req, res) => {
+        const ride = await Ride.findById(req.params.id).populate('rider');
+        res.send({ride});
     });
 
     // CREATE one ride
-    app.post('/rides', (req, res) => {
-        // console.log(req.body);
-        Ride.create(req.body)
+    app.post('/rides', async (req, res) => {
+        const decoded = jwt.verify(req.cookies.rideToken, process.env.SECRET);
+        Ride.create({...req.body, rider:decoded._id})
             .then((ride) => {
                 res.send({ rideId: ride._id });
             })
