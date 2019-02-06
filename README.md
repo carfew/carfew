@@ -2,7 +2,7 @@
     <img src="public/img/favicon_carfew.png"
          alt="Carfew Favicon"
          width="200" />
-</p>
+
 
 # Carfew - Fewer cars, more friends 🤝
 
@@ -16,6 +16,7 @@
 * [Running](https://github.com/carfew/carfew/tree/dev#running)
 * [Testing](https://github.com/carfew/carfew/tree/dev#testing)
 * [Contact Info](https://github.com/carfew/carfew/tree/dev#additional-contact-info)
+</p>
 
 ## What is Carfew? 🚘
 Carfew is a new, innovative ride-sharing solution for those who want to meet new people 👋. With Carfew, you drive to make connections and meet people who like the same things that you do.
