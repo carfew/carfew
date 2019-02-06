@@ -1,8 +1,8 @@
-<img src="public/img/favicon_carfew.png"
-     alt="Carfew Favicon"
-     text-align="center"
-     width="200" />
-
+<p align="center">
+    <img src="public/img/favicon_carfew.png"
+         alt="Carfew Favicon"
+         width="200" />
+</p>
 # Carfew - Fewer cars, more friends 🤝
 
 * [About Carfew](https://github.com/carfew/carfew/tree/dev#what-is-carfew-)
