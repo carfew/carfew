@@ -14,10 +14,10 @@ const styles = {
   root: {
     margin: 20,
     width: 450,
-    // height: '95%',
-    boxShadow: '0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23)',
-    background: '#fff',
-    borderRadius: 10,
+    maxHeight: '95%',
+    boxShadow: '0 10px 20px rgba(0, 0, 0, 0.05), 0 6px 6px rgba(0, 0, 0, 0.13)',
+    background: '#F6F9FC',
+    borderRadius: 7,
     zIndex: 10,
     position: 'absolute',
     padding: 30
@@ -53,6 +53,7 @@ class CarfewWindow extends Component {
               dest={this.props.dest} 
               changeAddress={this.props.changeAddress} 
               route={this.props.route}
+              getRides={this.props.getRides}
               changeAppState={this.props.changeAppState}
             /> :
             <AllRides 

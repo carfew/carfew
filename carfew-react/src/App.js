@@ -61,7 +61,7 @@ class App extends Component {
 
 
   getRides = async () => {
-    const res = await axios.get('http://localhost:3000/rides');
+    const res = await axios.get('/rides');
     const rides = res.data.rides
     this.setState({
       rides,
@@ -70,7 +70,6 @@ class App extends Component {
 
   componentDidMount = async () => {
     await this.getRides();
-    navigator.geolocation.getCurrentPosition(console.log)
   }
 
   changeAppState = () => {
@@ -106,6 +105,7 @@ class App extends Component {
           rides={this.state.rides}
           newRide={this.state.newRide}
           changeAppState={this.changeAppState}
+          getRides={this.getRides}
           route={this.state.route}
            />
           <MapComponent

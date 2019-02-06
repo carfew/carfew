@@ -44,7 +44,8 @@ module.exports = (app) => {
                                             maxAge: 900000,
                                             httpOnly: true,
                                         });
-                                        res.redirect(`/users/${user._id}`);
+                                        // res.redirect(`/users/${user._id}`);
+                                        res.redirect('/app');
                                     })
                                     .catch((err) => {
                                         console.log(err.message);
@@ -105,7 +106,8 @@ module.exports = (app) => {
                         maxAge: 900000,
                         httpOnly: true,
                     });
-                    res.redirect(`/users/${user._id}`);
+                    // res.redirect(`/users/${user._id}`);
+                    res.redirect('/app');
                 });
             })
             .catch((err) => {

@@ -5,7 +5,7 @@ const { Schema } = mongoose;
 const Ride = new Schema({
     createdAt: { type: Date },
     updatedAt: { type: Date },
-    // rider: { type: Schema.Types.ObjectId, required: true, ref: 'User' },
+    rider: { type: Schema.Types.ObjectId, required: true, ref: 'User' },
     // driver: { type: Schema.Types.ObjectId, required: true, ref: 'User' },
     origin: { type: Schema.Types.Mixed, required: true },
     destination: { type: Schema.Types.Mixed, required: true },
