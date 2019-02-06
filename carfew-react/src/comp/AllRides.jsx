@@ -1,9 +1,17 @@
 import React, { Component } from 'react';
 import withStyles from 'react-jss';
 import Button from '@material-ui/core/Button';
+import Icon from '@material-ui/core/Icon';
+
+import PersonPin from '@material-ui/icons/PersonPin';
 
 const styles = {
   root: {
+    display: 'flex',
+    flexFlow: 'column',
+  },
+  user: {
+    display: 'flex',
   }
 }
 
@@ -20,16 +28,20 @@ class AllRides extends Component {
     const { classes } = this.props; 
     return (
       <div className={classes.root}>
-        <Button variant="raised" color="primary" onClick={this.props.changeAppState}>New Ride</Button>
         {this.props.rides.map((ride) => {
           return (
-            <div>
+            <div className={classes.user}>
+              <div className={classes.userImage}>
+                <PersonPin style={{height: '100%', fontSize:'3em'}} />
+              </div>
               <h4>{ride.origin.formatted_address}</h4>
               <h6>to</h6>
               <h4>{ride.destination.formatted_address}</h4>
             </div>
           )
         })}
+        <Button variant="contained" color="primary" onClick={this.props.changeAppState}>New Ride</Button>
+
       </div> 
     );
   }

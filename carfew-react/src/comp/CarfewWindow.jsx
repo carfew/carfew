@@ -42,16 +42,21 @@ class CarfewWindow extends Component {
   }
 
   getRides = async () => {
-    const rides = await axios.get('/rides');
+    const res = await axios.get('http://localhost:3000/rides');
+    const rides = res.data.rides
     this.setState({
       rides,
     })
   }
 
+  componentDidMount = () => {
+    this.getRides();
+  }
+
   render() {
     const { classes } = this.props; 
     return (
-      <div bordered={false} className={classes.root}>
+      <div className={classes.root}>
         { this.state.newRide ?
           <NewRide 
             origin={this.props.origin} 

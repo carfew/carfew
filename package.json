@@ -10,8 +10,8 @@
   "scripts": {
     "starter": "cd carfew-react && npm install",
     "build": "cd carfew-react && npm run build && cd ..",
-    "start": "npm run build && node server.js",
-    "st": "node server.js",
+    "start": "node server.js",
+    "dev": "npm run build && nodemon server.js",
     "test": "mocha --exit tests/*"
   },
   "repository": {
