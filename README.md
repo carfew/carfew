@@ -29,9 +29,9 @@ This is an open-source project! Watch this repo for future updates 😉
 ## Why did we build Carfew? 🚗
 We all believe that climate change is an inevitable reality that we have a responsibility to do something about. Fewer cars on the road is one way to help curb those effects.
 
-Additionally, we are interested in understanding city infrastructure and being good citizens of the city we live in, San Francisco ❤️ .
+Additionally, we are interested in understanding city infrastructure and being good citizens of the place where we live, San Francisco ❤️ .
 
-Building an app that can help to limit the number of vehicles moving around the city will help make the air more breathable and make the streets safer for everyone.
+Building an app that can help to limit the number of vehicles moving around the city will help make the air more breathable and the streets safer for everyone.
 
 ## Who are the Carfew dev team? 👩‍💻 👨‍💻
 Our core developers are:
@@ -43,14 +43,14 @@ Our core developers are:
   - Technologies: Node, Express, MongoDB
 ### Wenzel Lowe 🌟
   - Role(s): Full Stack Developer, API Integration, Gitmaster
-  - Technologies: Node, Express, MongoDB, React, Google Maps API, git, Github
+  - Technologies: Node, Express, MongoDB, React, Google APIs (Maps, Places and Directions)
 ### Faith Chikwekwe ⭐️
   - Role(s): Back End Developer, Product Manager
   - Technologies: Node, Express, MongoDB, HTML, CSS, Handlebars, Github Projects
 
 Since this is an open source project, if you see something that can be improved, feel free to open an issue or a pull request to let us know.
 
-We are currently still developing the core idea, but once we've iterated on the main functionality, we'll be more than happy to look at community changes. 
+We are currently still developing the core idea, but once we've iterated on the main functionality, we'll be more than happy to look at community changes.
 
 ## File Structure 🗂
 ```
@@ -104,8 +104,12 @@ The user can delete their own posted rides. If the user goes to the show ONE rou
 #### '/rides' - show ALL rides
 The user can see all rides posted by users within the app. This is where the user can select rides to view in detail.
 
+### Users
+#### '/users/:id' - show ONE user
+#### '/users/:id/delete' - delete ONE user
+ 
 ### Authentication
-#### '/sign-up' - show sign-up template
+#### '/sign-up' - get sign-up template
 User can see the sign-up template and enter their sign-up information.
 
 #### '/sign-up' - create ONE user
@@ -113,10 +117,10 @@ User sign-up information is validated and processed through a POST route. Their 
 
 If successful, a JWT token will be created to keep them logged in for the duration of the session. This route will redirect to the rides index.
 
-#### '/login' - show login template
+#### '/login' - get login template
 User can see the login template and enter their login credentials.
 
-#### '/login' - show ONE user
+#### '/login' - post ONE user
 User login credentials are validated and processed through a POST route. Their username OR email address OR phone number must exactly match the information that we have on file. Their password must also be valid.
 
 If successful, a JWT token will be created to keep them logged in for the duration of the session. This route will redirect to the rides index.
