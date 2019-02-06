@@ -1,13 +1,21 @@
-<div id="registerBox">
-    <input type="text" placeholder="Full Name">
-    <br>
-    <input type="text" placeholder="Username">
-    <br>
-    <input type="text" placeholder="Email">
-    <br>
-    <input type="text" placeholder="Password">
-    <br>
-    <button>Register</button>
+<form action="/sign-up" method="POST">
+    <div id="registerBox">
+        <input name="firstName" type="text" placeholder="First Name" required>
+        <br>
+        <input name="lastName" type="text" placeholder="Last Name" required>
+        <br>
+        <!-- User will be able to login using email, phone number or username
+            so we need all three when they register -->
+        <input name="username" type="text" placeholder="Username" required>
+        <br>
+        <input name="email" type="text" placeholder="Email Address" required>
+        <br>
+        <input name="phone" type="tel" placeholder="Phone Number" required>
+        <br>
+        <input name="password" type="password" placeholder="Password" required>
+        <br>
+        <button type="submit">Register</button>
 
-    <p>Have an account?<span style="color: #0000a0"><a href="#"> Login</a></span></p>
-</div>
+        <p>Have an account?<span style="color: #0000a0"><a href="/login"> Login</a></span></p>
+    </div>
+</form>

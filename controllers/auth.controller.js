@@ -17,15 +17,24 @@ module.exports = (app) => {
         // CHECK FOR DUPLICATE USER
         User.findOne({ username })
             .then((oldUser) => {
+                console.log('1');
                 if (!oldUser || oldUser == null) {
                     User.findOne({ email })
                         .then((emailUser) => {
+                            console.log('2');
                             if (!emailUser || emailUser == null) {
                                 // CREATE User
-                                const user = new User(req.body);
+                                console.log('3');
+                                let user;
+                                try {
+                                    user = new User(req.body);
+                                } catch (err) {
+                                    console.log(err);
+                                }
                                 user
                                     .save()
                                     .then(() => {
+                                        console.log('4');
                                         const token = jwt.sign({
                                             _id: user._id,
                                         }, process.env.SECRET, {

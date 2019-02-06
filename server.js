@@ -14,7 +14,7 @@ const bodyParser = require('body-parser');
 const config = require('./config/config');
 const app = require('./config/express');
 const routes = require('./index.route');
-// Uncomment when you create custom auth middlewares
+// Uncomment when creating custom auth middlewares
 // const jwt = require('jsonwebtoken');
 
 /** Instantiate server */

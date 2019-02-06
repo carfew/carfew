@@ -2,7 +2,7 @@
   "name": "carfew",
   "version": "1.0.0",
   "description": "Carfew - Fewer cars, more friends 🤝",
-  "main": "index.js",
+  "main": "server.js",
   "directories": {
     "start": "node server.js",
     "test": "mocha --exit tests/*"

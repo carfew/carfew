@@ -7,7 +7,7 @@ module.exports = (app) => {
         Ride.find({})
             .then((rides) => {
                 // console.log(rides);
-                res.send({rides});
+                res.send({ rides });
             })
             .catch((err) => {
                 console.log(err.message);
@@ -26,7 +26,7 @@ module.exports = (app) => {
         // console.log(req.body);
         Ride.create(req.body)
             .then((ride) => {
-                res.send({rideId: ride._id});
+                res.send({ rideId: ride._id });
             })
             .catch((err) => {
                 console.log(err.message);

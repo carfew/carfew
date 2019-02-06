@@ -10,7 +10,10 @@ const UserSchema = new Schema({
     accountType: {
         type: String,
     },
-    name: {
+    firstName: {
+        type: String, required: true,
+    },
+    lastName: {
         type: String, required: true,
     },
     username: {
@@ -26,7 +29,7 @@ const UserSchema = new Schema({
         type: String, required: true, select: false
     },
     photoUrl: {
-        type: String, required: true, select: false
+        type: String, select: false
     },
 });
 
@@ -45,6 +48,12 @@ UserSchema.pre('save', function createUser(next) {
     if (!user.isModified('password')) {
         return next();
     }
+    bcrypt.genSalt(10, (err, salt) => {
+        bcrypt.hash(user.password, salt, (err, hash) => {
+            user.password = hash;
+            next();
+        });
+    });
     return null;
 });
 
