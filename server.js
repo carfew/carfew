@@ -6,13 +6,15 @@
 require('dotenv').config();
 
 /** Require middlewares */
-const config = require('./config/config');
-const app = require('./config/express');
+const mongoose = require('mongoose');
+const cookieParser = require('cookie-parser');
+const exphbs = require('express-handlebars');
 const methodOverride = require('method-override');
 const bodyParser = require('body-parser');
-const exphbs = require('express-handlebars');
-const cookieParser = require('cookie-parser');
+const config = require('./config/config');
+const app = require('./config/express');
 const routes = require('./index.route');
+// Uncomment when you create custom auth middlewares
 // const jwt = require('jsonwebtoken');
 
 /** Instantiate server */
@@ -24,11 +26,9 @@ app.set('view engine', 'handlebars');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
-// app.use(express.static('public'));
 app.use(cookieParser());
 
 /** Database connection */
-const mongoose = require('mongoose');
 
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/carfew', { useNewUrlParser: true });
 const db = mongoose.connection;
@@ -39,12 +39,14 @@ db.once('open', () => {
 
 /** Require controller(s) */
 require('./controllers/rides.controller.js')(app);
+require('./controllers/auth.controller.js')(app);
+require('./controllers/users.controller.js')(app);
 
 /** Port listener */
 app.listen(PORT, () => {
     console.log('Carfew listening on port', PORT);
 });
 
-app.use(routes)
+app.use(routes);
 
 module.exports = app;
