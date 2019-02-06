@@ -29,22 +29,28 @@ This is an open-source project! Watch this repo for future updates 😉
 ## Why did we build Carfew? 🚗
 We all believe that climate change is an inevitable reality that we have a responsibility to do something about. Fewer cars on the road is one way to help curb those effects.
 
-Additionally, we are interested in understanding city infrastructure and being good citizens of the city we live in, San Francisco ❤️ . Building an app that can help to limit the number of vehicles moving around the city will help make the air more breathable and make the streets safer for everyone.
+Additionally, we are interested in understanding city infrastructure and being good citizens of the city we live in, San Francisco ❤️ .
+
+Building an app that can help to limit the number of vehicles moving around the city will help make the air more breathable and make the streets safer for everyone.
 
 ## Who are the Carfew dev team? 👩‍💻 👨‍💻
 Our core developers are:
 ### Erik Batista ✨
-  - Roles: Front End Developer, UI/UX Design
+  - Role(s): Front End Developer, UI/UX Design
   - Technologies: HTML, CSS, Handlebars, Sketch
 ### Colleen Ni 💫
   - Role(s): Back End Developer
   - Technologies: Node, Express, MongoDB
 ### Wenzel Lowe 🌟
-  - Roles: Full Stack Developer, API Integration, Gitmaster
+  - Role(s): Full Stack Developer, API Integration, Gitmaster
   - Technologies: Node, Express, MongoDB, React, Google Maps API, git, Github
 ### Faith Chikwekwe ⭐️
-  - Roles: Back End Developer, Product Manager
+  - Role(s): Back End Developer, Product Manager
   - Technologies: Node, Express, MongoDB, HTML, CSS, Handlebars, Github Projects
+
+Since this is an open source project, if you see something that can be improved, feel free to open an issue or a pull request to let us know.
+
+We are currently still developing the core idea, but once we've iterated on the main functionality, we'll be more than happy to look at community changes. 
 
 ## File Structure 🗂
 ```
