@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import withStyles from 'react-jss';
 import classnames from 'classnames';
 import { withScriptjs } from 'react-google-maps';
+import axios from 'axios';
 import indigo from '@material-ui/core/colors/indigo';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
@@ -47,12 +48,34 @@ class App extends Component {
       origin: {},
       dest: {},
       route: null,
+      rides: [],
+      newRide: false,
     }
   }
 
   changeRoute = (route) => {
     this.setState({
       route
+    })
+  }
+
+
+  getRides = async () => {
+    const res = await axios.get('http://localhost:3000/rides');
+    const rides = res.data.rides
+    this.setState({
+      rides,
+    })
+  }
+
+  componentDidMount = async () => {
+    await this.getRides();
+    navigator.geolocation.getCurrentPosition(console.log)
+  }
+
+  changeAppState = () => {
+    this.setState({
+      newRide: !this.state.newRide,
     })
   }
 
@@ -80,9 +103,11 @@ class App extends Component {
           changeAddress={this.changeAddress} 
           origin={this.state.origin} 
           dest={this.state.dest}
+          rides={this.state.rides}
+          newRide={this.state.newRide}
+          changeAppState={this.changeAppState}
           route={this.state.route}
            />
-          }
           <MapComponent
           mapRef={this.mapRef}
           origin={this.state.origin}
@@ -92,6 +117,8 @@ class App extends Component {
           loadingElement={<div style={{ height: `100%` }} />}
           containerElement={<div className={classes.mapView} />}
           mapElement={<div style={{ height: `100%`, zIndex: 0 }} />}
+          newRide={this.state.newRide}
+          rides={this.state.rides}
           />
         </div>
       </MuiThemeProvider>

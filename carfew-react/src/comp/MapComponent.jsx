@@ -63,6 +63,12 @@ class MapComponent extends React.Component{
         defaultOptions={{ styles: mapStyle, fullscreenControl: false, mapTypeControl: false, streetViewControl: false }}
         >
         {this.state.directions ? <DirectionsRenderer directions={this.state.directions} /> : null}
+        {props.rides && !this.props.newRide ? 
+          props.rides.map((ride) => {
+            return <Marker position={{lat: ride.origin.lat, lng: ride.destination.lng}} />
+          }) : null
+
+        }
         {props.origin && !this.state.directions && <Marker position={{ lat: props.origin.lat, lng: props.origin.lng }} />}
         {props.dest && !this.state.directions &&<Marker position={{ lat: props.dest.lat, lng: props.dest.lng }} />}
       </GoogleMap>

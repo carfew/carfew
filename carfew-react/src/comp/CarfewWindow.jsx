@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import withStyles from 'react-jss';
 import axios from 'axios';
+import Slide from '@material-ui/core/Slide';
 import PlacesAutocomplete from 'react-places-autocomplete';
 
 
@@ -30,48 +31,37 @@ class CarfewWindow extends Component {
     this.state = {
       origin: this.props.origin,
       dest: this.props.dest,
-      newRide: false,
-      rides: []
+      rides: [],
+      mount: false
     }
   }
 
-  changeAppState = () => {
-    this.setState({
-      newRide: !this.state.newRide,
-    })
-  }
-
-  getRides = async () => {
-    const res = await axios.get('http://localhost:3000/rides');
-    const rides = res.data.rides
-    this.setState({
-      rides,
-    })
-  }
-
   componentDidMount = () => {
-    this.getRides();
-    navigator.geolocation.getCurrentPosition(console.log)
+    this.setState({
+      mount: true
+    })
   }
 
   render() {
     const { classes } = this.props; 
     return (
-      <div className={classes.root}>
-        { this.state.newRide ?
-          <NewRide 
-            origin={this.props.origin} 
-            dest={this.props.dest} 
-            changeAddress={this.props.changeAddress} 
-            route={this.props.route}
-            changeAppState={this.changeAppState}
-          /> :
-          <AllRides 
-            changeAppState={this.changeAppState}
-            rides={this.state.rides}
-           />
-        } 
-      </div> 
+      <Slide direction="up" in={this.state.mount}>
+        <div className={classes.root}>
+          { this.props.newRide ?
+            <NewRide 
+              origin={this.props.origin} 
+              dest={this.props.dest} 
+              changeAddress={this.props.changeAddress} 
+              route={this.props.route}
+              changeAppState={this.props.changeAppState}
+            /> :
+            <AllRides 
+              changeAppState={this.props.changeAppState}
+              rides={this.props.rides}
+             />
+          } 
+        </div> 
+      </Slide>
     );
   }
 }

@@ -46,14 +46,18 @@ class CarfewWindow extends Component {
   }
 
   handleDateChange = date => {
-    this.setState({ selectedDate: date });
+    this.setState({ pickupStart: date });
   };
 
   submitRide = async () => {
-    const res = await axios.post('/rides', {
+    const res = await axios.post('http://localhost:3000/rides', {
       origin: this.props.origin,
       destination: this.props.dest,
       pickupStart: this.state.pickupStart,
+      driveDetails: {
+        distance: this.props.route.distance.text,
+        duration: this.props.route.duration.text,
+      }
     })
 
     this.props.changeAppState();
@@ -91,7 +95,7 @@ class CarfewWindow extends Component {
           <Typography variant="subtitle2">Ride Length: {this.props.route.duration.text}</Typography>
         </div>}
         <div style={{display:'flex', width: '100%', marginTop: 20}}>
-          <Button color="secondary">Cancel</Button>
+          <Button onClick={this.props.changeAppState} color="secondary">Cancel</Button>
           <Button onClick={this.submitRide} variant="contained" color="primary" className={classes.fab} disabled={!(this.props.origin.hasOwnProperty('lat') && this.props.dest.hasOwnProperty('lat'))}>
             Submit
           </Button>

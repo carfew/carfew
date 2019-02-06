@@ -40,7 +40,7 @@ db.once('open', () => {
 /** Require controller(s) */
 require('./controllers/rides.controller.js')(app);
 require('./controllers/auth.controller.js')(app);
-require('./controllers/users.controller.js')(app);
+// require('./controllers/users.controller.js')(app);
 
 /** Port listener */
 app.listen(PORT, () => {

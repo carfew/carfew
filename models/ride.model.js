@@ -9,6 +9,7 @@ const Ride = new Schema({
     // driver: { type: Schema.Types.ObjectId, required: true, ref: 'User' },
     origin: { type: Schema.Types.Mixed, required: true },
     destination: { type: Schema.Types.Mixed, required: true },
+    driveDetails: { type: Schema.Types.Mixed },
     // Define the pickup window start and end times
     pickupStart: { type: Date, required: true },
     // pickupEnd: { type: Date, required: true },
