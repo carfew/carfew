@@ -1,6 +1,6 @@
 /** Authorization routes here */
 const jwt = require('jsonwebtoken');
-const User = require('../models/user');
+const User = require('../models/user.model');
 
 module.exports = (app) => {
     // SIGN-UP GET
