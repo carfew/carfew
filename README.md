@@ -33,11 +33,18 @@ Additionally, we are interested in understanding city infrastructure and being g
 
 ## Who are the Carfew dev team? 👩‍💻 👨‍💻
 Our core developers are:
-- Erik Batista - Front End Dev, UI/UX Design - HTML, CSS, Handlebars, Sketch
-- Colleen Ni - Back End Dev - Node, Express, MongoDB
-- Wenzel Lowe - Full Stack Dev, API Integration - Node, Express, MongoDB, React, Google Maps API
-- Faith Chikwekwe - Back End Dev, Product Manager - Node, Express, MongoDB, HTML, CSS, Handlebars
-
+### Erik Batista ✨
+  - Roles: Front End Developer, UI/UX Design
+  - Technologies: HTML, CSS, Handlebars, Sketch
+### Colleen Ni 💫
+  - Role(s): Back End Developer
+  - Technologies: Node, Express, MongoDB
+### Wenzel Lowe 🌟
+  - Roles: Full Stack Developer, API Integration, Gitmaster
+  - Technologies: Node, Express, MongoDB, React, Google Maps API, git, Github
+### Faith Chikwekwe ⭐️
+  - Roles: Back End Developer, Product Manager
+  - Technologies: Node, Express, MongoDB, HTML, CSS, Handlebars, Github Projects
 
 ## File Structure 🗂
 ```
