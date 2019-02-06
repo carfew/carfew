@@ -13,6 +13,10 @@ const styles = {
   },
   user: {
     display: 'flex',
+    padding: 10,
+    margin: 10,
+    boxShadow: '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)',
+    borderRadius: 5,
   }
 }
 
@@ -36,7 +40,7 @@ class AllRides extends Component {
                 <PersonPin style={{height: '100%', fontSize:'3em'}} />
               </div>
               <div className={classes.userInfo}>
-                <Typography variant="h6">Bob</Typography>
+                <Typography variant="h6" noWrap={true}>Bob Incredible</Typography>
               </div>{/*
               <h4>{ride.origin.formatted_address}</h4>
               <h6>to</h6>

@@ -6,7 +6,7 @@ module.exports = (app) => {
     app.get('/rides', (req, res) => {
         Ride.find({})
             .then((rides) => {
-                console.log(rides);
+                // console.log(rides);
                 res.send({rides});
             })
             .catch((err) => {

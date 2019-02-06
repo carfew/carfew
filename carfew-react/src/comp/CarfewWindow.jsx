@@ -51,6 +51,7 @@ class CarfewWindow extends Component {
 
   componentDidMount = () => {
     this.getRides();
+    navigator.geolocation.getCurrentPosition(console.log)
   }
 
   render() {
