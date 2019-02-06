@@ -4,8 +4,6 @@
          width="200" />
 </p>
 
-<div align="justify">
-
 # Carfew - Fewer cars, more friends 🤝
 
 * [About Carfew](https://github.com/carfew/carfew/tree/dev#what-is-carfew-)
@@ -18,8 +16,6 @@
 * [Running](https://github.com/carfew/carfew/tree/dev#running)
 * [Testing](https://github.com/carfew/carfew/tree/dev#testing)
 * [Contact Info](https://github.com/carfew/carfew/tree/dev#additional-contact-info)
-
-</div>
 
 ## What is Carfew? 🚘
 Carfew is a new, innovative ride-sharing solution for those who want to meet new people 👋. With Carfew, you drive to make connections and meet people who like the same things that you do.
