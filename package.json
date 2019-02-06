@@ -8,11 +8,11 @@
     "test": "mocha --exit tests/*"
   },
   "scripts": {
-    "starter": "cd carfew-react && npm install",            // Run on clone
-    "build": "cd carfew-react && npm run build && cd ..",   // React builder help function
-    "start": "node server.js",                              // Run on deployment
-    "dev": "npm run build && nodemon server.js",            // Run on development
-    "test": "mocha --exit tests/*"                          // Run tests
+    "starter": "cd carfew-react && npm install",
+    "build": "cd carfew-react && npm run build && cd ..",
+    "start": "node server.js",
+    "dev": "npm run build && nodemon server.js",
+    "test": "mocha --exit tests/*"
   },
   "repository": {
     "type": "git",
