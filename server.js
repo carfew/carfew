@@ -27,9 +27,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 app.use(cookieParser());
+app.use(routes);
 
 /** Database connection */
-
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/carfew', { useNewUrlParser: true });
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
@@ -40,13 +40,11 @@ db.once('open', () => {
 /** Require controller(s) */
 require('./controllers/rides.controller.js')(app);
 require('./controllers/auth.controller.js')(app);
-// require('./controllers/users.controller.js')(app);
+require('./controllers/users.controller.js')(app);
 
 /** Port listener */
 app.listen(PORT, () => {
     console.log('Carfew listening on port', PORT);
 });
-
-app.use(routes);
 
 module.exports = app;
