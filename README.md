@@ -3,6 +3,7 @@
          alt="Carfew Favicon"
          width="200" />
 </p>
+
 # Carfew - Fewer cars, more friends 🤝
 
 * [About Carfew](https://github.com/carfew/carfew/tree/dev#what-is-carfew-)
