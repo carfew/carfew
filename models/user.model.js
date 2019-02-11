@@ -5,8 +5,12 @@ const uniqueValidator = require('mongoose-unique-validator');
 const { Schema } = mongoose;
 
 const UserSchema = new Schema({
-    createdAt: { type: Date },
-    updatedAt: { type: Date },
+    createdAt: {
+        type: Date
+    },
+    updatedAt: {
+        type: Date
+    },
     accountType: {
         type: String,
     },
@@ -31,6 +35,9 @@ const UserSchema = new Schema({
     photoUrl: {
         type: String, select: false
     },
+    notifications: [{
+        type: Schema.Types.Mixed, default: []
+    }],
 });
 
 UserSchema.plugin(uniqueValidator);
