@@ -1,21 +1,112 @@
-<form action="/sign-up" method="POST">
+
+<link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
+
+<style type="text/css">
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.navBar {
+    text-align: center;
+    color: white;
+    font-size: 24px;
+}
+
+#title {
+    color: #8C97D9;
+}
+
+.firstLine {
+    height: 1px;
+    width: 100%;
+    background-color: #9B9B9B;
+    text-align: center;
+}
+
+#infoLabel {
+    color: #4a4a4a;
+    font-family: 'Roboto-bold', sans-serif;
+    font-size: 24px;
+}
+
+.formy {
+    text-align: center;
+}
+
+#firstName, #lastName, #username, #email, #phone, #password {
+    font-size: 24px;
+    width: 407px;
+    height: 61px;
+    border-radius: 10px;
+    border: 1px solid #4a4a4a;
+    outline: none;
+}
+
+#firstName::placeholder, #lastName::placeholder, #username::placeholder, #email::placeholder, #phone::placeholder, #password::placeholder {
+    color: #9B9B9B;
+    position: fixed;
+    float: left;
+    padding-left: 8px;
+}
+
+#submit {
+    background-color: #8C97D9;
+    color: white;
+    width: 407px;
+    height: 61px;
+    border-radius: 27px;
+    border: 1px solid white;
+    font-size: 23px;
+    font-family: 'Roboto-bold', sans-serif;
+}
+
+#alreayHaveAnAccount {
+    color: #4a4a4a;
+    font-family: 'Roboto-bold', sans-serif;
+    font-size: 24px;
+}
+
+</style>
+
+
+
+<!--HTML-->
+
+<div class="navBar">
+    <h1 id="title">Carfew</h1>
+    <div class="firstLine"></div>
+</div>
+
+<form class="formy" action="/sign-up" method="POST">
+
+    <p id="infoLabel">Sign up with your email address</p>
+
     <div id="registerBox">
-        <input name="firstName" type="text" placeholder="First Name" required>
+        <input id="firstName" name="firstName" type="text" placeholder="First Name" required>
         <br>
-        <input name="lastName" type="text" placeholder="Last Name" required>
+        <br>
+        <input id="lastName" name="lastName" type="text" placeholder="Last Name" required>
+        <br>
         <br>
         <!-- User will be able to login using email, phone number or username
             so we need all three when they register -->
-        <input name="username" type="text" placeholder="Username" required>
+        <input id="username" name="username" type="text" placeholder="Username" required>
         <br>
-        <input name="email" type="email" placeholder="Email Address" required>
         <br>
-        <input name="phone" type="tel" placeholder="Phone Number" required>
+        <input id="email" name="email" type="email" placeholder="Email Address" required>
         <br>
-        <input name="password" type="password" placeholder="Password" required>
         <br>
-        <button type="submit">Register</button>
-
-        <p>Have an account?<span style="color: #0000a0"><a href="/login"> Login</a></span></p>
+        <input id="phone" name="phone" type="tel" placeholder="Phone Number" required>
+        <br>
+        <br>
+        <input id="password" name="password" type="password" placeholder="Password" required>
+        <br>
+        <br>
+        <button id="submit" type="submit">SIGN UP</button>
+        <br>
+        <br>
+        <p id="alreayHaveAnAccount">Already have an account?<span style="color: #8C97D9"><a style="color: #8C97D9; text-decoration: none;" href="/login"> Log in</a></span></p>
     </div>
 </form>
