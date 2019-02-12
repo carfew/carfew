@@ -16,6 +16,7 @@ const Ride = new Schema({
     expiration: { type: Date },
     status: { type: String, default: 'created' },
     rating: { type: Number },
+    description : { type: String },
 });
 
 
