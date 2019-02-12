@@ -14,16 +14,13 @@ module.exports = (app) => {
         let user;
         try {
             user = await new User(req.body);
+            await user.save();
         } catch (err) {
             console.log(err);
         }
         let token;
         try {
-            token = await jwt.sign({
-                _id: user._id,
-            }, process.env.SECRET, {
-                expiresIn: '60 days',
-            });
+            token = await jwt.sign({ _id: user._id }, process.env.SECRET, { expiresIn: '60 days' });
             res.cookie('rideToken', token, {
                 maxAge: 900000,
                 httpOnly: true,
@@ -45,19 +42,20 @@ module.exports = (app) => {
     app.post('/login', async (req, res) => {
         const { username, password } = req.body;
         // Find this username
-        const user = User.findOne({ username }, 'username password')
+        const user = await User.findOne({ username }, 'username password');
+        console.log(user);
         if (!user) {
             return res.status(401).send({
                 message: 'Wrong username or password!',
             });
         }
-        user.comparePassword(password, async (err, isMatch) => {
+        user.comparePassword(password, (err, isMatch) => {
             if (!isMatch) {
                 return res.status(401).send({
                     message: 'Password is not valid!',
                 });
             }
-            const token = await jwt.sign({
+            const token = jwt.sign({
                 _id: user._id,
                 username: user.username,
             }, process.env.SECRET, {
@@ -68,7 +66,7 @@ module.exports = (app) => {
                 httpOnly: true,
             });
             // res.redirect(`/users/${user._id}`);
-            res.redirect('/app');
+            return res.redirect('/app');
         });
     });
 
