@@ -59,6 +59,7 @@ class CarfewWindow extends Component {
             <AllRides 
               changeAppState={this.props.changeAppState}
               rides={this.props.rides}
+              showRoute={this.props.showRoute}
              />
           } 
         </div> 

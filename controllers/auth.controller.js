@@ -14,7 +14,11 @@ module.exports = (app) => {
         let user;
         try {
             user = await new User(req.body);
+<<<<<<< HEAD
             await user.save();
+=======
+            user.save();
+>>>>>>> eefafaa35e942634e0212156e7eb2bc8cb295e15
         } catch (err) {
             console.log(err);
         }
