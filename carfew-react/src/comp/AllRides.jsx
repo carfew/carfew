@@ -78,7 +78,8 @@ class AllRides extends Component {
     })
   }
 
-  handleBack = () => {
+  handleBack = async () => {
+    await this.props.showRoute(null, null, true)
     this.setState({
       showOne: false,
       rideId: null,
@@ -91,7 +92,7 @@ class AllRides extends Component {
     if (this.state.showOne) {
       return(
         <div className={classes.root}>
-          <SingleRide rideId={this.state.rideId} />
+          <SingleRide rideId={this.state.rideId} showRoute={this.props.showRoute} />
           <div style={{display:'flex', justifyContent:'space-between'}}>
             <Button onClick={this.handleBack} color="secondary">Back</Button>
             <Button variant="contained" color="primary">Pick Up!</Button>
@@ -103,6 +104,7 @@ class AllRides extends Component {
           <Typography variant="h4">Rides</Typography>
             <div style={{display:'flex',flexFlow:'column', overflow: 'scroll', maxHeight: '80vh'}}>
               {this.props.rides.map((ride) => {
+                console.log(ride)
                 return (
                   <div className={classes.ride} onClick={() =>{this.clickRide(ride._id)}}>
                     <div className={classes.userImage}>
