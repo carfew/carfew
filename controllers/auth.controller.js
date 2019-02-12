@@ -14,6 +14,7 @@ module.exports = (app) => {
         let user;
         try {
             user = await new User(req.body);
+            user.save();
         } catch (err) {
             console.log(err);
         }
