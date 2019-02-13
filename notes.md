@@ -25,3 +25,6 @@ GET all rides - shows all rides that have been posted
 POST one ride (rider posts their desired ride)
 - req.body will contain origin, dest, start range, and user id
  :D
+
+- [Erik] Make the carfew logo clickable at the top of the login and signup pages
+- [Erik] Fix sign up button at the bottom of login page
