@@ -1,8 +1,9 @@
 {
   "rules": {
+    "no-console": "off",
     "indent": [
       2,
-      2,
+      4,
       {
         "SwitchCase": 1
       }

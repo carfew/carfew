@@ -56,9 +56,15 @@ We are currently still developing the core idea, but once we've iterated on the 
 ```
 root/
 |
+|-- carfew-react/               # React files and dependencies
+|        |--build/
+|        |--public/
+|        |--src/
+|        |--README.md
+|
 |-- controllers/                # routing and logic
-        |-- ride.controller.js
-        |-- user.controller.js
+        |-- rides.controller.js
+        |-- users.controller.js
         |-- auth.controller.js
 |
 |-- models/                     # database models
@@ -79,19 +85,18 @@ root/
 |     |-- config.js
       |-- express.js
 |
-|-- public/                     # public folder for static content
-      |-- css/
-      |-- js/
+|-- public/                     # static content
       |-- img/
 |
 |-- env files                   # environment variables
 |-- index.js                    # dev server
 |-- notes.md                    # unorganized notes; pre-Kanban board
 |-- README.md
+|-- misc
 ```
 
 ## Endpoints
-### Rides
+### Rides 🚖
 #### '/rides' - create ONE ride
 The user can create a ride by specifying the origin, the destination and the pickup window. The ride itself creates a mixed type object that can interact with the Google Maps API to display on a map.
 
@@ -104,11 +109,18 @@ The user can delete their own posted rides. If the user goes to the show ONE rou
 #### '/rides' - show ALL rides
 The user can see all rides posted by users within the app. This is where the user can select rides to view in detail.
 
-### Users
+### Users 🧑 🧔
 #### '/users/:id' - show ONE user
+User can see and interact with their user dashboard. Access to the user dashboard is dependent on proper authorization and authentication.
+
 #### '/users/:id/delete' - delete ONE user
- 
-### Authentication
+User can permanently delete their profile. The user can only access this route from their dashboard and only with proper authorization.
+
+This route will log the user out my destroying their JWT token and end their session. It also deletes their information and routes them back to the root route.
+
+After deleting their profile, the user must create a new profile in order to gain access to the full features of the website.
+
+### Authentication 🔐
 #### '/sign-up' - get sign-up template
 User can see the sign-up template and enter their sign-up information.
 
@@ -130,16 +142,25 @@ The route will destroy the user's JWT token removing authorization to create and
 
 The user will be routed back to the root route.
 
-## API Integration - What APIs are we using?
+## API Integration - What APIs are we using? 💻 📡
 - Google Places for accurate location search.
 - Google Directions to get distance and directions between the origin and the destination.
 - Google Maps to render the map so that the user can visualize their ride.
 
-## Running
+## Running 🏃
+If you would like to see the current, live version of Carfew, simply visit https://www.carfew.app/.
 
-## Testing
-We used Mocha and Chai for testing. Tests are stored in /tests directory.
+If you would like to run the app on your local server, you can fork and/or clone the repo. From the root route, type 'npm run starter' and the 'npm run dev' to build the react app.
+
+Every subsequent time that you run the app without pulling updated code you can simply run 'npm run start'.
+
+If you pull updated code from the master branch, please use 'npm run dev' so that you re-build the react app again.
+
+## Testing 📝
+We used Mocha and Chai for testing. Tests are stored in 'tests/' directory.
 
 To run tests for this project, clone the project and then type the command 'npm test' or 'mocha' into your console from the project root folder.
 
-## Additional Contact Info
+## Additional Contact Info ☎
+
+For questions related to Carfew development or to get in touch with the team, email Faith Chikwekwe at faith.chikwekwe@students.makeschool.com.
