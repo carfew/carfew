@@ -107,7 +107,7 @@ The user can see all rides posted by users within the app. This is where the use
 ### Users
 #### '/users/:id' - show ONE user
 #### '/users/:id/delete' - delete ONE user
- 
+
 ### Authentication
 #### '/sign-up' - get sign-up template
 User can see the sign-up template and enter their sign-up information.
@@ -137,9 +137,12 @@ The user will be routed back to the root route.
 
 ## Running
 
+
 ## Testing
 We used Mocha and Chai for testing. Tests are stored in /tests directory.
 
 To run tests for this project, clone the project and then type the command 'npm test' or 'mocha' into your console from the project root folder.
 
 ## Additional Contact Info
+
+For questions related to Carfew development or to get in touch with the team, email Faith Chikwekwe at faith.chikwekwe@students.makeschool.com.
