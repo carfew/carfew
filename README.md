@@ -29,23 +29,42 @@ This is an open-source project! Watch this repo for future updates 😉
 ## Why did we build Carfew? 🚗
 We all believe that climate change is an inevitable reality that we have a responsibility to do something about. Fewer cars on the road is one way to help curb those effects.
 
-Additionally, we are interested in understanding city infrastructure and being good citizens of the city we live in, San Francisco ❤️ . Building an app that can help to limit the number of vehicles moving around the city will help make the air more breathable and make the streets safer for everyone.
+Additionally, we are interested in understanding city infrastructure and being good citizens of the place where we live, San Francisco ❤️ .
+
+Building an app that can help to limit the number of vehicles moving around the city will help make the air more breathable and the streets safer for everyone.
 
 ## Who are the Carfew dev team? 👩‍💻 👨‍💻
 Our core developers are:
-- Erik Batista - Front End Dev, UI/UX Design - HTML, CSS, Handlebars, Sketch
-- Colleen Ni - Back End Dev - Node, Express, MongoDB
-- Wenzel Lowe - Full Stack Dev, API Integration - Node, Express, MongoDB, React, Google Maps API
-- Faith Chikwekwe - Back End Dev, Product Manager - Node, Express, MongoDB, HTML, CSS, Handlebars
+### Erik Batista ✨
+  - Role(s): Front End Developer, UI/UX Design
+  - Technologies: HTML, CSS, Handlebars, Sketch
+### Colleen Ni 💫
+  - Role(s): Back End Developer
+  - Technologies: Node, Express, MongoDB
+### Wenzel Lowe 🌟
+  - Role(s): Full Stack Developer, API Integration, Gitmaster
+  - Technologies: Node, Express, MongoDB, React, Google APIs (Maps, Places and Directions)
+### Faith Chikwekwe ⭐️
+  - Role(s): Back End Developer, Product Manager
+  - Technologies: Node, Express, MongoDB, HTML, CSS, Handlebars, Github Projects
 
+Since this is an open source project, if you see something that can be improved, feel free to open an issue or a pull request to let us know.
+
+We are currently still developing the core idea, but once we've iterated on the main functionality, we'll be more than happy to look at community changes.
 
 ## File Structure 🗂
 ```
 root/
 |
+|-- carfew-react/               # React files and dependencies
+|        |--build/
+|        |--public/
+|        |--src/
+|        |--README.md
+|
 |-- controllers/                # routing and logic
-        |-- ride.controller.js
-        |-- user.controller.js
+        |-- rides.controller.js
+        |-- users.controller.js
         |-- auth.controller.js
 |
 |-- models/                     # database models
@@ -66,19 +85,18 @@ root/
 |     |-- config.js
       |-- express.js
 |
-|-- public/                     # public folder for static content
-      |-- css/
-      |-- js/
+|-- public/                     # static content
       |-- img/
 |
 |-- env files                   # environment variables
 |-- index.js                    # dev server
 |-- notes.md                    # unorganized notes; pre-Kanban board
 |-- README.md
+|-- misc
 ```
 
 ## Endpoints
-### Rides
+### Rides 🚖
 #### '/rides' - create ONE ride
 The user can create a ride by specifying the origin, the destination and the pickup window. The ride itself creates a mixed type object that can interact with the Google Maps API to display on a map.
 
@@ -91,8 +109,19 @@ The user can delete their own posted rides. If the user goes to the show ONE rou
 #### '/rides' - show ALL rides
 The user can see all rides posted by users within the app. This is where the user can select rides to view in detail.
 
-### Authentication
-#### '/sign-up' - show sign-up template
+### Users 🧑 🧔
+#### '/users/:id' - show ONE user
+User can see and interact with their user dashboard. Access to the user dashboard is dependent on proper authorization and authentication.
+
+#### '/users/:id/delete' - delete ONE user
+User can permanently delete their profile. The user can only access this route from their dashboard and only with proper authorization.
+
+This route will log the user out my destroying their JWT token and end their session. It also deletes their information and routes them back to the root route.
+
+After deleting their profile, the user must create a new profile in order to gain access to the full features of the website.
+
+### Authentication 🔐
+#### '/sign-up' - get sign-up template
 User can see the sign-up template and enter their sign-up information.
 
 #### '/sign-up' - create ONE user
@@ -100,10 +129,10 @@ User sign-up information is validated and processed through a POST route. Their 
 
 If successful, a JWT token will be created to keep them logged in for the duration of the session. This route will redirect to the rides index.
 
-#### '/login' - show login template
+#### '/login' - get login template
 User can see the login template and enter their login credentials.
 
-#### '/login' - show ONE user
+#### '/login' - post ONE user
 User login credentials are validated and processed through a POST route. Their username OR email address OR phone number must exactly match the information that we have on file. Their password must also be valid.
 
 If successful, a JWT token will be created to keep them logged in for the duration of the session. This route will redirect to the rides index.
@@ -113,16 +142,25 @@ The route will destroy the user's JWT token removing authorization to create and
 
 The user will be routed back to the root route.
 
-## API Integration - What APIs are we using?
+## API Integration - What APIs are we using? 💻 📡
 - Google Places for accurate location search.
 - Google Directions to get distance and directions between the origin and the destination.
 - Google Maps to render the map so that the user can visualize their ride.
 
-## Running
+## Running 🏃
+If you would like to see the current, live version of Carfew, simply visit https://www.carfew.app/.
 
-## Testing
-We used Mocha and Chai for testing. Tests are stored in /tests directory.
+If you would like to run the app on your local server, you can fork and/or clone the repo. From the root route, type 'npm run starter' and the 'npm run dev' to build the react app.
+
+Every subsequent time that you run the app without pulling updated code you can simply run 'npm run start'.
+
+If you pull updated code from the master branch, please use 'npm run dev' so that you re-build the react app again.
+
+## Testing 📝
+We used Mocha and Chai for testing. Tests are stored in 'tests/' directory.
 
 To run tests for this project, clone the project and then type the command 'npm test' or 'mocha' into your console from the project root folder.
 
-## Additional Contact Info
+## Additional Contact Info ☎
+
+For questions related to Carfew development or to get in touch with the team, email Faith Chikwekwe at faith.chikwekwe@students.makeschool.com.

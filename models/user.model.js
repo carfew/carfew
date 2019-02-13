@@ -5,12 +5,19 @@ const uniqueValidator = require('mongoose-unique-validator');
 const { Schema } = mongoose;
 
 const UserSchema = new Schema({
-    createdAt: { type: Date },
-    updatedAt: { type: Date },
+    createdAt: {
+        type: Date
+    },
+    updatedAt: {
+        type: Date
+    },
     accountType: {
         type: String,
     },
-    name: {
+    firstName: {
+        type: String, required: true,
+    },
+    lastName: {
         type: String, required: true,
     },
     username: {
@@ -26,8 +33,11 @@ const UserSchema = new Schema({
         type: String, required: true, select: false
     },
     photoUrl: {
-        type: String, required: true, select: false
+        type: String, select: false
     },
+    notifications: [{
+        type: Schema.Types.Mixed, default: []
+    }],
 });
 
 UserSchema.plugin(uniqueValidator);
@@ -45,6 +55,12 @@ UserSchema.pre('save', function createUser(next) {
     if (!user.isModified('password')) {
         return next();
     }
+    bcrypt.genSalt(10, (err, salt) => {
+        bcrypt.hash(user.password, salt, (err, hash) => {
+            user.password = hash;
+            next();
+        });
+    });
     return null;
 });
 

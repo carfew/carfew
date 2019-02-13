@@ -2,16 +2,17 @@
   "name": "carfew",
   "version": "1.0.0",
   "description": "Carfew - Fewer cars, more friends 🤝",
-  "main": "server.js",
+  "main": "index.js",
   "directories": {
-    "start": "node server.js",
+    "start": "node index.js",
     "test": "mocha --exit tests/*"
   },
   "scripts": {
     "starter": "cd carfew-react && npm install",
     "build": "cd carfew-react && npm run build && cd ..",
-    "start": "node server.js",
-    "dev": "npm run build && nodemon server.js",
+    "start": "node index.js",
+    "dev": "npm run build && nodemon index.js",
+    "docker": "npm run build && node index.js",
     "test": "mocha --exit tests/*"
   },
   "repository": {
@@ -44,6 +45,7 @@
     "eslint": "^5.13.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.16.0",
-    "mocha": "^5.2.0"
+    "mocha": "^5.2.0",
+    "nodemon": "^1.18.10"
   }
 }

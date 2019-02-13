@@ -1,10 +1,112 @@
-<div id="loginBox">
-    <input type="text" placeholder="Email">
-    <br>
-    <input type="text" placeholder="Password">
-    <br>
-    <button>Login</button>
-    <p>Forgot Password?<span style="color: #0000a0"><a href="#"> Reset</a></span></p>
+{{!-- <link rel="stylesheet" type="text/css" href="/login.css"> --}}
+<style type="text/css">
 
-    <p>Don't have an account?<span style="color: #0000a0"><a href="#"> Sign up</a></span></p>
-</div>
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.formy {
+    text-align: center;
+}
+
+#infoLabel {
+    color: #4a4a4a;
+    font-family: 'Roboto-bold', sans-serif;
+    font-size: 24px;
+}
+
+#title {
+    color: #8C97D9;
+}
+
+#email, #password {
+    font-size: 24px;
+    width: 407px;
+    height: 61px;
+    border-radius: 10px;
+    border: 1px solid #4a4a4a;
+    outline: none;
+}
+
+#email::placeholder, #password::placeholder {
+    color: #9B9B9B;
+    position: fixed;
+    float: left;
+    padding-left: 8px;
+}
+
+#loginBtn {
+    background-color: #8C97D9;
+    color: white;
+    width: 407px;
+    height: 61px;
+    border-radius: 27px;
+    border: 1px solid #8C97D9;
+    font-size: 23px;
+    font-family: 'Roboto-bold', sans-serif;
+}
+
+#forgotPass {
+    color: #8C97D9;
+    font-family: 'Roboto-bold', sans-serif;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+#donotHaveAcctLabel {
+    color: #4a4a4a;
+    font-family: 'Roboto-bold', sans-serif;
+    font-size: 26px;
+}
+
+#signUpBtn {
+    color: #9B9B9B;
+    width: 407px;
+    height: 61px;
+    border-radius: 27px;
+    border: 1px solid #9B9B9B;
+    font-size: 23px;
+    font-family: 'Roboto-bold', sans-serif;
+}
+
+.secondLine {
+    height: 1px;
+    width: 30%;
+    background-color: #9B9B9B;
+    text-align: center;
+    display: inline-block;
+}
+
+</style>
+
+
+<!--HTML-->
+
+
+
+<form class="formy" action="/login" method="POST">
+
+    <p id="infoLabel">To continue, login to Carfew.</p>
+
+    <div id="loginBox">
+        <input id="email" name="username" type="text" placeholder="Email address or username" required>
+        <br>
+        <br>
+        <input id="password" name="password" type="password" placeholder="Password" required>
+        <br>
+        <br>
+        <button id="loginBtn" type="submit">LOG IN</button>
+        <br>
+        <br>
+        <a id="forgotPass" href="#">Forgot Password?</a></span></p>
+        <div class="secondLine"></div>
+        <p id="donotHaveAcctLabel">Don't have an account?</p>
+
+        <a href="/sign-up"><button id="signUpBtn" type="submit">SIGN UP FOR CARFEW</button></a>
+
+        {{!-- <p>Don't have an account?<span style="color: #0000a0"><a href="/sign-up"> Sign up</a></span></p> --}}
+        <br>
+        <br>
+        <br>
+    </div>
+</form>

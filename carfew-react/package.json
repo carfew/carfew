@@ -10,9 +10,11 @@
     "babel-loader": "8.0.5",
     "classnames": "2.2.6",
     "date-fns": "2.0.0-alpha.25",
+    "geolib": "^2.0.24",
     "material-ui-pickers": "2.1.2",
     "moment": "2.24.0",
     "react": "^16.7.0",
+    "react-cookie": "^3.0.8",
     "react-dom": "^16.7.0",
     "react-google-maps": "9.4.5",
     "react-jss": "8.6.1",
@@ -21,7 +23,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && mv build/index.html build/app.html",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

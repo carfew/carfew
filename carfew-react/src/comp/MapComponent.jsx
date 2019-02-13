@@ -56,17 +56,36 @@ class MapComponent extends React.Component{
     if (props.dest.lat && props.origin.lat) {
       this.makeRoute();
     }
-    return (
+    if (this.props.directions) {
+      return (
+        <GoogleMap
+        defaultZoom={11}
+        center={ { lat:  37.8791998, lng: -122.4203375 } }
+        defaultOptions={{ styles: mapStyle, fullscreenControl: false, mapTypeControl: false, streetViewControl: false }}
+        >
+        <DirectionsRenderer directions={this.props.directions} />
+        </GoogleMap>
+      )
+    }else {
+      return (
       <GoogleMap
         defaultZoom={11}
         center={ { lat:  37.8791998, lng: -122.4203375 } }
         defaultOptions={{ styles: mapStyle, fullscreenControl: false, mapTypeControl: false, streetViewControl: false }}
         >
-        {this.state.directions ? <DirectionsRenderer directions={this.state.directions} /> : null}
-        {props.origin && !this.state.directions && <Marker position={{ lat: props.origin.lat, lng: props.origin.lng }} />}
-        {props.dest && !this.state.directions &&<Marker position={{ lat: props.dest.lat, lng: props.dest.lng }} />}
+        {this.state.directions && this.props.newRide ? <DirectionsRenderer directions={this.state.directions} /> : null}
+        {props.rides && !this.props.newRide ? 
+          props.rides.map((ride) => {
+            return <Marker position={{lat: ride.origin.lat, lng: ride.origin.lng}} />
+          }) : null
+
+        }
+        {props.origin && !this.state.directions && this.props.newRide && <Marker position={{ lat: props.origin.lat, lng: props.origin.lng }} />}
+        {props.dest && !this.state.directions && this.props.newRide &&<Marker position={{ lat: props.dest.lat, lng: props.dest.lng }} />}
       </GoogleMap>
     );
+    }
+    
   }
 }
 
