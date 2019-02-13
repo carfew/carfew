@@ -46,7 +46,8 @@ class AllRides extends Component {
 
     this.state = {
       showOne: false,
-      rideId: null
+      rideId: null,
+      isSelf: false,
     }
   }
 
@@ -86,6 +87,11 @@ class AllRides extends Component {
     })
   }
 
+  getIfDelete = (isDelete) => {
+    this.setState({
+      isSelf: true
+    })
+  }
 
   render() {
     const { classes } = this.props; 
@@ -111,7 +117,7 @@ class AllRides extends Component {
                       <PersonPin style={{height: '100%', fontSize:'3em'}} />
                     </div>
                     <div className={classes.userInfo}>
-                      <Typography variant="h6" noWrap={true} color="primary" style={{margin:0}}>{ride.rider.firstName} {ride.rider.lastName}</Typography>
+                      {ride.rider && <Typography variant="h6" noWrap={true} color="primary" style={{margin:0}}>{ride.rider.firstName} {ride.rider.lastName}</Typography>}
                       <Typography variant="subtitle" noWrap={true} style={{margin:0, width: 230}}><i>{this.getFrom(ride)}</i> to <i>{this.getTo(ride)}</i></Typography>
                     </div>
                     <div className={classes.rideInfo}>

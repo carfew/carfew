@@ -25,7 +25,7 @@ export default class SingleRide extends Component {
       <div>
         {this.state.ride && 
           <div>
-            <Typography variant="h6">{this.state.ride.rider.firstName} {this.state.ride.rider.lastName}</Typography>
+            {this.state.ride.rider && <Typography variant="h6">{this.state.ride.rider.firstName} {this.state.ride.rider.lastName}</Typography>}
             <Typography variant="body2">{this.state.ride.origin.formatted_address}</Typography>
             <Typography variant="body1">to</Typography>
             <Typography variant="body2">{this.state.ride.destination.formatted_address}</Typography>
