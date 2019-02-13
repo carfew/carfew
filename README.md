@@ -56,9 +56,15 @@ We are currently still developing the core idea, but once we've iterated on the 
 ```
 root/
 |
+|-- carfew-react/               # React files and dependencies
+|        |--build/
+|        |--public/
+|        |--src/
+|        |--README.md
+|
 |-- controllers/                # routing and logic
-        |-- ride.controller.js
-        |-- user.controller.js
+        |-- rides.controller.js
+        |-- users.controller.js
         |-- auth.controller.js
 |
 |-- models/                     # database models
@@ -79,15 +85,14 @@ root/
 |     |-- config.js
       |-- express.js
 |
-|-- public/                     # public folder for static content
-      |-- css/
-      |-- js/
+|-- public/                     # static content
       |-- img/
 |
 |-- env files                   # environment variables
 |-- index.js                    # dev server
 |-- notes.md                    # unorganized notes; pre-Kanban board
 |-- README.md
+|-- misc
 ```
 
 ## Endpoints
