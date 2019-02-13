@@ -136,7 +136,13 @@ The user will be routed back to the root route.
 - Google Maps to render the map so that the user can visualize their ride.
 
 ## Running
+If you would like to see the current, live version of Carfew, simply visit https://www.carfew.app/.
 
+If you would like to run the app on your local server, you can fork and/or clone the repo. From the root route, type 'npm run starter' and the 'npm run dev' to build the react app.
+
+Every subsequent time that you run the app without pulling updated code you can simply run 'npm run start'.
+
+If you pull updated code from the master branch, please use 'npm run dev' so that you re-build the react app again.
 
 ## Testing
 We used Mocha and Chai for testing. Tests are stored in /tests directory.
