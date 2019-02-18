@@ -5,20 +5,60 @@
 .footer {
     background-color: #8C97D9;
     position: absolute;
+    text-align: center;
     left: 0px;
     right: 0px;
-    line-height: 40px;
+    line-height: 75px;
 }
 
-p {
+/*p {
     text-align: center;
     font-size: 24px;
     font-family: 'Roboto-bold', sans-serif;
     color: white;
+}*/
+
+a {
+    text-align: center;
+    font-size: 24px;
+    font-family: 'Roboto-bold', sans-serif;
+    color: white;
+    /*word-spacing: 20px;*/
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  text-align: center;
+  display: inline-block;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  color: #8C97D9;
 }
 
 </style>
 
 <div class="footer">
-    <p>Made with ❤ at Make School</p>
+    {{!-- <p>Made with ❤ at Make School</p> --}}
+<ul>
+  <li><a href="#">Home</a></li>
+  <li><a href="#">Learn more</a></li>
+  <li><a href="#">Contact us</a></li>
+  <li><a href="#">Github</a></li>
+</ul>
+
 </div>
