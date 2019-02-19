@@ -35,7 +35,12 @@ module.exports = (app) => {
     //SIGN-UP POST: attempt to use email and phone number
 
     app.post('/login', async (req, res) => {
-        const { username, password } = req.body;
+        const {
+            username,
+            email,
+            phone,
+            password
+        } = req.body;
         // Find this username
         const user = await User.findOne({ username }, 'username password');
         console.log(user);
