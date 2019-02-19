@@ -6,7 +6,7 @@ module.exports = (app) => {
     // GET all rides
     app.get('/rides', async (req, res) => {
         const decoded = jwt.verify(req.cookies.rideToken, process.env.SECRET);
-        // console.log(req.headers);
+
         try {
             const rides = await Ride.find({});
             const userRides = await Ride.find({ rider: decoded._id })
@@ -14,8 +14,8 @@ module.exports = (app) => {
             // await rides.populate('rider');
             // await userRides.populate('user rides');
 
-            console.log('all rides', rides);
-            console.log('current user', userRides);
+            // console.log('all rides', rides);
+            // console.log('current user', userRides);
 
             await res.json({ rides, userRides });
         } catch (err) {
