@@ -4,17 +4,25 @@ const Ride = require('../models/ride.model');
 
 module.exports = (app) => {
     // GET all rides
-    app.get('/rides', (req, res) => {
-        Ride.find({})
-            .populate('rider')
-            .then((rides) => {
-                // console.log(rides);
-                res.send({ rides });
-            })
-            .catch((err) => {
-                console.log(err.message);
-                res.status(400).send(err.message)
-            });
+    app.get('/rides', async (req, res) => {
+        const decoded = jwt.verify(req.cookies.rideToken, process.env.SECRET);
+
+        try {
+            const rides = await Ride.find({});
+            const userRides = await Ride.find({ rider: decoded._id })
+
+            // await rides.populate('rider');
+            // await userRides.populate('user rides');
+
+            // console.log('all rides', rides);
+            // console.log('current user', userRides);
+
+            await res.json({ rides, userRides });
+        } catch (err) {
+            console.log(err.message);
+            res.status(400).send(err.message)
+        }
+
     });
     // SHOW one ride
     app.get('/rides/:id', async (req, res) => {
