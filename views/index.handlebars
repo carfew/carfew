@@ -20,10 +20,11 @@
         opacity: 1;
         transform: initial;
     }
-    
+
     .columns {
         margin: 20px;
     }
+
 
     @media only screen and (max-width:768px) {
         .hero {
@@ -32,6 +33,11 @@
 
         .index-title {
             font-size: 3em;
+        }
+
+        .reverse {
+            flex-flow: column-reverse;
+            display: flex;
         }
     }
 </style>
@@ -77,7 +83,8 @@
                         <div class="buttons" style="margin-top:10px">
                             <a href="/sign-up" class="button is-rounded is-success is-large"
                                 style="background-color:#FFD20D; color:#666">Sign Up</a>
-                            <a href="/login" class="is-size-5" style="margin-left:20px; text-decoration:underline">Login</a>
+                            <a href="/login" class="is-size-5"
+                                style="margin-left:20px; text-decoration:underline">Login</a>
                         </div>
                     </div>
                 </div>
@@ -93,7 +100,7 @@
             <div class="column">
                 <img src="/img/ind-1.png" />
             </div>
-            <div class="column" ></div>
+            <div class="column"></div>
             <div class="column">
                 <h1 class="is-size-3">Make Friends</h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
@@ -103,7 +110,7 @@
                     culpa qui officia deserunt mollit anim id est laborum.</p>
             </div>
         </div>
-        <div class="columns">
+        <div class="columns reverse">
             <div class="column">
                 <h1 class="is-size-3">Verified Drivers</h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
@@ -134,9 +141,9 @@
         </div>
     </div>
     <div class="has-text-centered" style="align-self: center; margin-top:50px;">
-            <a href="/sign-up" class="button is-large is-rounded " style="background-color:#FFD20D; color:#666;border:none">
-                Sign Up
-            </a>
+        <a href="/sign-up" class="button is-large is-rounded " style="background-color:#FFD20D; color:#666;border:none">
+            Sign Up
+        </a>
     </div>
 </div>
 <div class="section has-background-dark is-fullwidth has-text-white" style="width:100%; margin-top:50px;">
