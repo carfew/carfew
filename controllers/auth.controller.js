@@ -10,27 +10,27 @@ module.exports = (app) => {
     });
 
     // SIGN-UP POST; right now can only use username or email for sign-up
-    // app.post('/sign-up', async (req, res) => {
-    //     let user;
-    //     try {
-    //         user = await new User(req.body);
-    //         await user.save();
-    //     } catch (err) {
-    //         console.log(err);
-    //     }
-    //     let token;
-    //     try {
-    //         token = await jwt.sign({ _id: user._id }, process.env.SECRET, { expiresIn: '60 days' });
-    //         res.cookie('rideToken', token, {
-    //             maxAge: 900000,
-    //             httpOnly: true,
-    //         });
-    //         // res.redirect(`/users/${user._id}`);
-    //         res.redirect('/app');
-    //     } catch (err) {
-    //         console.log(err);
-    //     }
-    // });
+    app.post('/sign-up', async (req, res) => {
+        let user;
+        try {
+            user = await new User(req.body);
+            await user.save();
+        } catch (err) {
+            console.log(err);
+        }
+        let token;
+        try {
+            token = await jwt.sign({ _id: user._id }, process.env.SECRET, { expiresIn: '60 days' });
+            res.cookie('rideToken', token, {
+                maxAge: 900000,
+                httpOnly: true,
+            });
+            // res.redirect(`/users/${user._id}`);
+            res.redirect('/app');
+        } catch (err) {
+            console.log(err);
+        }
+    });
 
     //SIGN-UP POST: attempt to use email and phone number
 
