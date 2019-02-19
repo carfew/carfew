@@ -32,8 +32,6 @@ module.exports = (app) => {
         }
     });
 
-    //SIGN-UP POST: attempt to use email and phone number
-
     app.post('/login', async (req, res) => {
         const {
             username,
