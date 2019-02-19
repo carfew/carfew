@@ -20,7 +20,7 @@ router.get('/app', (req, res) => {
 
 
 router.get('/', (req, res) => {
-  res.send('<a href="/login">login</a><br><a href="/sign-up">sign-up</a><br><a href="/app">app (must be signed in)</a>');
+  res.render('index');
 })
 
 module.exports = router;
