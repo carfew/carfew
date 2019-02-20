@@ -49,6 +49,9 @@ class MapComponent extends React.Component{
         // console.error(`error fetching directions ${result}`);
       }
     });
+
+    //Zoom fix, show all markers
+    //DirectionService.MoveMarker({lat: route.lat, lng: route.lng})
   }
 
   render() {
@@ -59,7 +62,7 @@ class MapComponent extends React.Component{
     if (this.props.directions) {
       return (
         <GoogleMap
-        defaultZoom={11}
+        defaultZoom={9}
         center={ { lat:  37.8791998, lng: -122.4203375 } }
         defaultOptions={{ styles: mapStyle, fullscreenControl: false, mapTypeControl: false, streetViewControl: false }}
         >
@@ -69,7 +72,7 @@ class MapComponent extends React.Component{
     }else {
       return (
       <GoogleMap
-        defaultZoom={11}
+        defaultZoom={9}
         center={ { lat:  37.8791998, lng: -122.4203375 } }
         defaultOptions={{ styles: mapStyle, fullscreenControl: false, mapTypeControl: false, streetViewControl: false }}
         >

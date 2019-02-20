@@ -67,6 +67,7 @@ body {
     border: 1px solid #9B9B9B;
     font-size: 23px;
     font-family: 'Roboto-bold', sans-serif;
+    text-align: center;
 }
 
 .secondLine {
@@ -75,6 +76,10 @@ body {
     background-color: #9B9B9B;
     text-align: center;
     display: inline-block;
+}
+
+.signupDiv {
+    text-align: center;
 }
 
 </style>
@@ -102,11 +107,11 @@ body {
         <div class="secondLine"></div>
         <p id="donotHaveAcctLabel">Don't have an account?</p>
 
-        <a href="/sign-up"><button id="signUpBtn" type="submit">SIGN UP FOR CARFEW</button></a>
-
         {{!-- <p>Don't have an account?<span style="color: #0000a0"><a href="/sign-up"> Sign up</a></span></p> --}}
-        <br>
-        <br>
-        <br>
     </div>
 </form>
+
+<div class="signupDiv">
+    <a href="/sign-up"><button id="signUpBtn" type="submit">SIGN UP FOR CARFEW</button></a>
+</div>
+

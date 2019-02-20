@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="public/img/favicon_carfew.png"
+    <img src="carfew-react/public/img/favicon_carfew.png"
          alt="Carfew Favicon"
          width="200" />
 </p>
