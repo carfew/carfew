@@ -171,6 +171,19 @@ a {
   font-family: 'Roboto-bold', sans-serif;
 }
 
+.userInfo {
+    font-size: 22px;
+}
+
+#firstName, #lastName {
+    display: inline-block;
+    color: gray;
+}
+
+#editBtn {
+    font-size: 18px;
+}
+
 </style>
 <body>
 
@@ -180,8 +193,8 @@ a {
   <li><a href="#">RIDES</a></li>
   <li><a href="#">LOGIN</a></li>
   <li><a href="#">SIGN UP</a></li>
-  <li><a href="#">LOGOUT</a></li>
   <li><a href="#">PROFILE</a></li>
+  <li><a href="#">LOGOUT</a></li>
 
   <!-- <div class="dropdown">
   <input class="dropdown-toggle" type="text">
@@ -195,7 +208,17 @@ a {
 </div> -->
 </ul>
 </div>
-
+<br><br><br>
+<div class="userInfo">
+    <p id="firstName">FirstName</p>
+    <p id="lastName">LastName</p>
+    <br>
+    <button id="editBtn">edit</button>
+    <br>
+    <button>Logout</button>
+    <br><br><br>
+    <button>Delete Account</button>
+</div>
 
 
 </body>
