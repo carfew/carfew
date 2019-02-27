@@ -13,7 +13,7 @@ import "./index.css";
 import CarfewWindow from "./comp/CarfewWindow.jsx";
 import MapComponent from "./comp/MapComponent.jsx";
 
-window.API_URL = "http://localhost:8080";
+window.API_URL = "";
 
 const styles = {
   root: {
