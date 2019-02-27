@@ -12,7 +12,7 @@ export default class SingleRide extends Component {
   }
 
   componentDidMount = async () => {
-    const res = await axios.get(`/rides/${this.props.rideId}`);
+    const res = await axios.get(`${window.API_URL}/rides/${this.props.rideId}`);
     // console.log(res.data.ride)
     await this.setState({
       ride: res.data.ride,
