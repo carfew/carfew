@@ -21,7 +21,7 @@ const testUser = {
 
 describe('User', () => {
 
-    // TEST SHOW
+    // TEST show
     it('should show User on /users/<id> GET', (done) => {
         const user = new User(testUser);
         user.save(() => {
