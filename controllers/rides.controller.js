@@ -2,14 +2,25 @@ const jwt = require('jsonwebtoken');
 const config = require('../config/config');
 const Ride = require('../models/ride.model');
 
-module.exports = (app) => {
+module.exports = app => {
     // GET all rides
     app.get('/rides', async (req, res) => {
-        const decoded = jwt.verify(req.cookies.rideToken, process.env.SECRET);
+        let decoded;
+
+        if (process.env.NODE_ENV !== 'development') {
+            decoded = jwt.verify(req.cookies.rideToken, process.env.SECRET);
+        } else {
+            // Dummy document for React!
+            decoded = {
+                _id: '5c746c74eafe61c687acdcd9'
+            };
+        }
 
         try {
-            const rides = await Ride.find({});
-            const userRides = await Ride.find({ rider: decoded._id })
+            const rides = await Ride.find({}).populate('rider');
+            const userRides = await Ride.find({
+                $or: [{ rider: decoded._id }, { driver: decoded._id }]
+            }).populate('rider');
 
             // await rides.populate('rider');
             // await userRides.populate('user rides');
@@ -20,35 +31,52 @@ module.exports = (app) => {
             await res.json({ rides, userRides });
         } catch (err) {
             console.log(err.message);
-            res.status(400).send(err.message)
+            res.status(400).send(err.message);
         }
-
     });
+
     // SHOW one ride
     app.get('/rides/:id', async (req, res) => {
         const ride = await Ride.findById(req.params.id).populate('rider');
-        res.send({ride});
+        res.send({ ride });
+    });
+
+    // Accept one ride
+    app.post('/rides/accept/:id', async (req, res) => {
+        const ride = await Ride.findById(req.params.id).populate('rider');
+
+        if (process.env.NODE_ENV !== 'development') {
+            ride.driver = req.user._id;
+        } else {
+            // Dummy document for React!
+            ride.driver = '5c746c74eafe61c687acdcd9';
+        }
+
+        ride.status = 'proposed';
+        await ride.save();
+
+        res.json({ ride });
     });
 
     // CREATE one ride
     app.post('/rides', async (req, res) => {
         const decoded = jwt.verify(req.cookies.rideToken, process.env.SECRET);
-        Ride.create({...req.body, rider:decoded._id})
-            .then((ride) => {
+        Ride.create({ ...req.body, rider: decoded._id })
+            .then(ride => {
                 res.send({ rideId: ride._id });
             })
-            .catch((err) => {
+            .catch(err => {
                 console.log(err.message);
             });
     });
 
     // DELETE one ride
     app.delete('/rides/:id', (req, res) => {
-        Ride.deleteOne(req.params.id)
+        Ride.deleteOne({ _id: req.params.id })
             .then(() => {
-                res.redirect('/rides');
+                res.status(200).send();
             })
-            .catch((err) => {
+            .catch(err => {
                 console.log(err.message);
             });
     });

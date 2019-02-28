@@ -6,7 +6,7 @@ const Ride = new Schema({
     createdAt: { type: Date },
     updatedAt: { type: Date },
     rider: { type: Schema.Types.ObjectId, required: true, ref: 'User' },
-    // driver: { type: Schema.Types.ObjectId, required: true, ref: 'User' },
+    driver: { type: Schema.Types.ObjectId, ref: 'User' },
     origin: { type: Schema.Types.Mixed, required: true },
     destination: { type: Schema.Types.Mixed, required: true },
     driveDetails: { type: Schema.Types.Mixed },
@@ -14,11 +14,11 @@ const Ride = new Schema({
     pickupStart: { type: Date, required: true },
     // pickupEnd: { type: Date, required: true },
     expiration: { type: Date },
-    status: { type: String, default: 'created' },
+    // status options: posted, proposed, accepted, ongoing, completed
+    status: { type: String, default: 'posted' },
     rating: { type: Number },
-    description : { type: String },
+    description: { type: String }
 });
-
 
 Ride.pre('save', async (next) => {
     // Make createdAt and updatedAt
@@ -26,11 +26,11 @@ Ride.pre('save', async (next) => {
     this.updatedAt = now;
     if (!this.createdAt) {
         this.createdAt = now;
-    // user.groups.unshift(this.id);
+        this.status = 'posted';
+        // user.groups.unshift(this.id);
     }
     next();
 });
-
 
 // check to see if status has changed
 // change status

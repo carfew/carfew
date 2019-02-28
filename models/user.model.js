@@ -35,6 +35,7 @@ const UserSchema = new Schema({
     photoUrl: {
         type: String, select: false
     },
+    // Ride
     notifications: [{
         type: Schema.Types.Mixed, default: []
     }],
@@ -63,6 +64,10 @@ UserSchema.pre('save', function createUser(next) {
     });
     return null;
 });
+
+// UserSchema.methods.updateNotifications = function notify() {
+//     // if my ride is updated to proposed, then
+// }
 
 UserSchema.pre('update', function updateTime() {
     this.update({}, { $set: { updatedAt: new Date() } });
