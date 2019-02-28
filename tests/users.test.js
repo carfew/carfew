@@ -24,12 +24,12 @@ describe('User', () => {
     // TEST SHOW
     it('should show User on /users/<id> GET', (done) => {
         const user = new User(testUser);
-        user.save((err, data) => {
+        user.save(() => {
             chai.request(server)
-                .get(`/users/${data._id}`)
+                .get(`/users/${user._id}`)
                 .end((err, res) => {
                     res.should.have.status(200);
-                    res.should.be.html;
+                    res.should.be.json;
                     done();
                 });
         });
@@ -38,10 +38,11 @@ describe('User', () => {
     // TEST DELETE
     it('should delete user on /users/<id> DELETE', (done) => {
         const user = new User(testUser);
-        user.save((err, data) => {
+        user.save(() => {
             chai.request(server)
-                .delete(`/users/${data._id}?_method=DELETE`)
+                .delete(`/users/${user._id}?_method=DELETE`)
                 .end((err, res) => {
+                    console.log(user);
                     res.should.have.status(200);
                     res.should.be.html;
                     done();

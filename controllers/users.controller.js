@@ -10,8 +10,10 @@ module.exports = (app) => {
 
     // This should delete the the user and clear the user's session
     app.delete('/users/:id/delete', (req, res) => {
+        console.log("ID = " + req.params.id)
         User.deleteOne(req.params.id)
             .then(() => {
+                console.log("DELETED SUCCESSFULLY!!!")
                 res.redirect('/');
             })
             .catch((err) => {
