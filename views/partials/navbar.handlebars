@@ -78,12 +78,15 @@ a {
 
 <div class="navBar">
 <ul>
-  <li><a href="#">HOME</a></li>
-  <li><a href="#">RIDES</a></li>
-  <li><a href="#">LOGIN</a></li>
-  <li><a href="#">SIGN UP</a></li>
-  <li><a href="#">LOGOUT</a></li>
-  <li><a href="#">PROFILE</a></li>
+  <li><a href="/">HOME</a></li>
+  <li><a href="/login">LOGIN</a></li>
+  <li><a href="/signup">SIGN UP</a></li>
+
+  {{#if currentUser}}
+    <li><a href="/app">RIDES</a></li>
+    <li><a href="/logout">LOGOUT</a></li>
+    <li><a href="/users/{{user._id}}`">PROFILE</a></li>
+  {{/if}}
 
   <!-- <div class="dropdown">
   <input class="dropdown-toggle" type="text">

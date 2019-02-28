@@ -25,8 +25,8 @@ module.exports = (app) => {
                 maxAge: 900000,
                 httpOnly: true,
             });
-            // res.redirect(`/users/${user._id}`);
-            res.redirect('/app');
+            res.redirect(`/users/${user._id}`);
+            // res.redirect('/app');
         } catch (err) {
             console.log(err);
         }
@@ -69,8 +69,8 @@ module.exports = (app) => {
                 maxAge: 900000,
                 httpOnly: true,
             });
-            // res.redirect(`/users/${user._id}`);
-            return res.redirect('/app');
+            res.redirect(`/users/${user._id}`);
+            // return res.redirect('/app');
         });
     });
 
@@ -107,8 +107,8 @@ module.exports = (app) => {
                 maxAge: 900000,
                 httpOnly: true,
             });
-            // res.redirect(`/users/${user._id}`);
-            return res.redirect('/app');
+            res.redirect(`/users/${user._id}`);
+            // return res.redirect('/app');
         });
     });
 

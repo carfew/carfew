@@ -4,7 +4,7 @@ module.exports = (app) => {
     // This should display the user profile
     app.get('/users/:id', (req, res) => {
         User.findById(req.params.id, (err, user) => {
-            res.json({ user });
+            res.render('dashboard', { user });
         });
     });
 

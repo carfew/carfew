@@ -12,6 +12,7 @@ const exphbs = require('express-handlebars');
 const methodOverride = require('method-override');
 const bodyParser = require('body-parser');
 const jwt = require('jsonwebtoken');
+const express = require('express');
 const config = require('./config/config');
 const app = require('./config/express');
 const routes = require('./index.route');
@@ -22,6 +23,7 @@ const PORT = process.env.PORT || 3000;
 /** Use middlewares */
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
+app.use(express.static('./carfew-react/public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
