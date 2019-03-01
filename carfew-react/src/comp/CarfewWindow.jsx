@@ -1,24 +1,25 @@
-import React, { Component } from "react";
-import withStyles from "react-jss";
-import axios from "axios";
-import Slide from "@material-ui/core/Slide";
-import PlacesAutocomplete from "react-places-autocomplete";
+import React, { Component } from 'react';
+import withStyles from 'react-jss';
+import axios from 'axios';
+import Slide from '@material-ui/core/Slide';
+import PlacesAutocomplete from 'react-places-autocomplete';
 
-import NewRide from "./NewRide.jsx";
-import AllRides from "./AllRides.jsx";
+import NewRide from './NewRide.jsx';
+import AllRides from './AllRides.jsx';
 
-import LocationSearchInput from "./LocationSearchInput.jsx";
+import LocationSearchInput from './LocationSearchInput.jsx';
 
 const styles = {
   root: {
     margin: 20,
+    marginTop: 90,
     width: 450,
-    maxHeight: "95%",
-    boxShadow: "0 10px 20px rgba(0, 0, 0, 0.05), 0 6px 6px rgba(0, 0, 0, 0.13)",
-    background: "#F6F9FC",
+    maxHeight: '85%',
+    boxShadow: '0 10px 20px rgba(0, 0, 0, 0.05), 0 6px 6px rgba(0, 0, 0, 0.13)',
+    background: '#F6F9FC',
     borderRadius: 7,
     zIndex: 10,
-    position: "absolute",
+    position: 'absolute',
     padding: 30
   }
 };

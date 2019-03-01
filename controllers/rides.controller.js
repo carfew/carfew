@@ -12,7 +12,8 @@ module.exports = app => {
         } else {
             // Dummy document for React!
             decoded = {
-                _id: '5c746c74eafe61c687acdcd9'
+                _id: '5c746c74eafe61c687acdcd9',
+                username: 'wen'
             };
         }
 
@@ -28,7 +29,7 @@ module.exports = app => {
             // console.log('all rides', rides);
             // console.log('current user', userRides);
 
-            await res.json({ rides, userRides });
+            await res.json({ rides, userRides, username: decoded.username });
         } catch (err) {
             console.log(err.message);
             res.status(400).send(err.message);
