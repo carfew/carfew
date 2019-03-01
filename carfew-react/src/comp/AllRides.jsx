@@ -223,6 +223,7 @@ class AllRides extends Component {
               style={{
                 width: "100%",
                 display: "flex",
+                minHeight: 20,
                 justifyContent: "space-between"
               }}
             >

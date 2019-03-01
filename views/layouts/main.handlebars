@@ -1,23 +1,34 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Carfew - Fewer cars, more friends 🤝</title>
-        <link rel="shortcut icon" type="image/png" href="/img/favicon_carfew.png"/>
 
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carfew - Fewer cars, more friends 🤝</title>
+  <link rel="shortcut icon" type="image/png" href="/img/favicon_carfew.png" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto|Karla:400,700" rel="stylesheet">
+  {{extraScripts}}
+</head>
 
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
-        {{extraScripts}}
-    </head>
-    <body>
-        {{#unless index}}
-            {{>navbar}}
-        <br><br><br><br><br><br><br><br>
-        {{/unless}}
-        {{{body}}}
-        {{#unless index}}
-            {{>footer}}
-        {{/unless}}
-    </body>
+<body>
+  {{#unless index}}
+  {{>navbar}}
+  <br><br><br><br><br><br><br><br>
+  {{/unless}}
+  {{{body}}}
+  {{#unless index}}
+  {{>footer}}
+  {{/unless}}
+</body>
+<style>
+  * {
+    font-family: Karla !important;
+  }
+
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+</style>
+
 </html>
