@@ -34,11 +34,7 @@ const UserSchema = new Schema({
     },
     photoUrl: {
         type: String, select: false
-    },
-    // Ride object and a bool that shows whether notification has been read or not
-    notifications: [{
-        type: Schema.Types.Mixed, default: []
-    }],
+    }
 });
 
 UserSchema.plugin(uniqueValidator);
@@ -64,10 +60,6 @@ UserSchema.pre('save', function createUser(next) {
     });
     return null;
 });
-
-UserSchema.methods.updateNotifications = function notify() {
-    // this needs to update Read attribute in notifications
-}
 
 UserSchema.pre('update', function updateTime() {
     this.update({}, { $set: { updatedAt: new Date() } });

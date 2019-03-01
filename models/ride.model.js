@@ -56,13 +56,6 @@ Ride.pre('save', async (next) => {
     next();
 });
 
-
-// check to see if status has changed
-Ride.methods.checkStatus = function status() {
-    // check to see if status has changed
-    // update status, driver, rider
-}
-
 Ride.pre('update', function updateTime() {
     this.update({}, { $set: { updatedAt: new Date() } });
 });
