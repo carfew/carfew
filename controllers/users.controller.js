@@ -1,19 +1,37 @@
 const User = require('../models/user.model');
+const Ride = require('../models/ride.model');
+const Notification = require('../models/notification.model');
 
 module.exports = (app) => {
     // This should display the user profile
-    app.get('/users/:id', (req, res) => {
-        User.findById(req.params.id, (err, user) => {
-            res.render('dashboard', { user });
+    app.get('/users/:id', async (req, res) => {
+        // Find the current user's information
+        const user = await User.findById(req.params.id);
+        // Find all the rides where current user is rider
+        const userRides = await Ride.find({
+            rider: user._id
+        }).populate('rider');
+        // Find all the rides where current user is driver
+        const userDrives = await Ride.find({
+            driver: user._id
+        }).populate('driver');
+        // Find all the notification where current user is involved
+        const notifications = await Notification.find({
+            $or: [{ rider: user._id }, { driver: user._id }]
+        })
+
+        await res.render('dashboard', {
+            user,
+            userRides,
+            userDrives,
+            notifications
         });
     });
 
     // This should delete the the user and clear the user's session
     app.delete('/users/:id/delete', (req, res) => {
-        console.log("ID = " + req.params.id)
         User.deleteOne(req.params.id)
             .then(() => {
-                console.log("DELETED SUCCESSFULLY!!!")
                 res.redirect('/');
             })
             .catch((err) => {
