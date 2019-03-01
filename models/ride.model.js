@@ -32,9 +32,9 @@ const Ride = new Schema({
     expiration: {
         type: Date
     },
-    // status options: created, proposed, accepted, ongoing, completed
+    // status options: posted, proposed, accepted, ongoing, completed
     status: {
-        type: String, default: 'created'
+        type: String, default: 'posted'
     },
     rating: {
         type: Number
@@ -45,12 +45,12 @@ const Ride = new Schema({
 });
 
 Ride.pre('save', async (next) => {
-    // Make createdAt and updatedAt
+    // Make postedAt and updatedAt
     const now = new Date();
     this.updatedAt = now;
     if (!this.createdAt) {
         this.createdAt = now;
-        this.status = 'created';
+        this.status = 'posted';
         // user.groups.unshift(this.id);
     }
     next();
