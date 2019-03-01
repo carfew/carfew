@@ -32,7 +32,6 @@ app.use(routes);
 
 /** Custom auth-checking middleware */
 const checkAuth = (req, res, next) => {
-    // console.log('Checking authentication');
     if (typeof req.cookies.rideToken === 'undefined' || req.cookies === null) {
         req.user = null;
     } else {

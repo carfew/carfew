@@ -1,3 +1,4 @@
+const jwt = require('jsonwebtoken');
 const User = require('../models/user.model');
 const Ride = require('../models/ride.model');
 const Notification = require('../models/notification.model');
