@@ -1,6 +1,6 @@
 /*
-*  Carfew Main Server
-*/
+ *  Carfew Main Server
+ */
 
 /** Require environment variable(s) */
 require('dotenv').config();
@@ -46,7 +46,9 @@ const checkAuth = (req, res, next) => {
 app.use(checkAuth);
 
 /** Database connection */
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/carfew', { useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/carfew', {
+    useNewUrlParser: true
+});
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', () => {

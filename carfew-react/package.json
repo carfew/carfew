@@ -24,7 +24,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && mv build/index.html build/app.html",
+    "build": "react-scripts build && mv build/index.html build/app.html && mv public/index.html public/app.html",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

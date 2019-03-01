@@ -2,213 +2,208 @@
 </link>
 <link href="https://fonts.googleapis.com/css?family=Karla:400,700" rel="stylesheet" />
 <style>
+  .hero {
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  }
+
+  .index-title {
+    font-size: 4em;
+  }
+
+  .carfew-img {
+    opacity: 0;
+    transform: scale(0) rotate(360deg);
+    transition: 1s;
+  }
+
+  .carfew-img.active {
+    opacity: 1;
+    transform: initial;
+  }
+
+  .columns {
+    margin: 20px;
+  }
+
+
+  @media only screen and (max-width:768px) {
     .hero {
-        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
     }
 
     .index-title {
-        font-size: 4em;
+      font-size: 3em;
     }
 
-    .carfew-img {
-        opacity: 0;
-        transform: scale(0) rotate(360deg);
-        transition: 1s;
+    .reverse {
+      flex-flow: column-reverse;
+      display: flex;
     }
-
-    .carfew-img.active {
-        opacity: 1;
-        transform: initial;
-    }
-
-    .columns {
-        margin: 20px;
-    }
-
-
-    @media only screen and (max-width:768px) {
-        .hero {
-            clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
-        }
-
-        .index-title {
-            font-size: 3em;
-        }
-
-        .reverse {
-            flex-flow: column-reverse;
-            display: flex;
-        }
-    }
+  }
 </style>
 <div class="is-flex" style="flex-flow:column; align-items:center;">
-    <div class="hero is-fullheight is-primary is-bold" style="width:100%;">
-        <div class="hero-head">
-            <nav class="navbar">
-                <div class="container" style="border-bottom:2px #fff solid">
-                    <div class="navbar-brand">
-                        <a class="navbar-item">
-                            <h1 class="is-size-2 has-text-weight-bold">Carfew</h1>
-                        </a>
-                        <a role="button" class="navbar-burger burger nav-toggle" aria-label="menu" aria-expanded="false"
-                            data-target="navbar-menu">
-                            <span aria-hidden="true"></span>
-                            <span aria-hidden="true"></span>
-                            <span aria-hidden="true"></span>
-                        </a>
-                    </div>
-                    <div id="navbar-menu" class="navbar-menu">
-                        <div class="navbar-end">
-                            <a href="/sign-up" class="navbar-item">
-                                <h3 class="is-size-6 has-text-weight-bold">SIGN UP</h3>
-                            </a>
-                            <a href="/login" class="navbar-item">
-                                <h3 class="is-size-6 has-text-weight-bold">LOG IN</h3>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-        </div>
-        <div class="hero-body" style="z-index:10">
-            <div class="container" style="width: 70%; flex-grow:initial">
-                <div class="columns">
-                    <div class="column is-half">
-                        <img class="carfew-img" src="/carfew-transparent.png" />
-                    </div>
-                    <div class="column is-flex" style="justify-content:center; flex-flow: column">
-                        <h1 class="has-text-weight-bold index-title" style="letter-spacing:-0.05em;line-height: 1em">
-                            Make your drives meaningful.
-                        </h1>
-                        <div class="buttons" style="margin-top:10px">
-                            <a href="/sign-up" class="button is-rounded is-success is-large"
-                                style="background-color:#FFD20D; color:#666">Sign Up</a>
-                            <a href="/login" class="is-size-5"
-                                style="margin-left:20px; text-decoration:underline">Login</a>
-                        </div>
-                    </div>
-                </div>
+  <div class="hero is-fullheight is-primary is-bold" style="width:100%;">
+    <div class="hero-head">
+      <nav class="navbar">
+        <div class="container" style="border-bottom:2px #fff solid">
+          <div class="navbar-brand">
+            <a class="navbar-item">
+              <h1 class="is-size-2 has-text-weight-bold">Carfew</h1>
+            </a>
+            <a role="button" class="navbar-burger burger nav-toggle" aria-label="menu" aria-expanded="false"
+              data-target="navbar-menu">
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+            </a>
+          </div>
+          <div id="navbar-menu" class="navbar-menu">
+            <div class="navbar-end">
+              <a href="/sign-up" class="navbar-item">
+                <h3 class="is-size-6 has-text-weight-bold">SIGN UP</h3>
+              </a>
+              <a href="/login" class="navbar-item">
+                <h3 class="is-size-6 has-text-weight-bold">LOG IN</h3>
+              </a>
             </div>
+          </div>
         </div>
-        <div
-            style="position:absolute; left:0; top: 0; width: 100%; height:100%; background-image:url('/img/index-img.jpg');background-size:cover;opacity:0.1;z-index: 0" />
+      </nav>
     </div>
+    <div class="hero-body" style="z-index:10">
+      <div class="container" style="width: 70%; flex-grow:initial">
+        <div class="columns">
+          <div class="column is-half">
+            <img class="carfew-img" src="/carfew-transparent.png" />
+          </div>
+          <div class="column is-flex" style="justify-content:center; flex-flow: column">
+            <h1 class="has-text-weight-bold index-title" style="letter-spacing:-0.05em;line-height: 1em">
+              Make your drives meaningful.
+            </h1>
+            <div class="buttons" style="margin-top:10px">
+              <a href="/sign-up" class="button is-rounded is-success is-large"
+                style="background-color:#FFD20D; color:#666">Sign Up</a>
+              <a href="/login" class="is-size-5" style="margin-left:20px; text-decoration:underline">Login</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style="position:absolute; left:0; top: 0; width: 100%; height:100%; background-image:url('/img/index-img.jpg');background-size:cover;opacity:0.1;z-index: 0" />
+  </div>
 </div>
 <div class="section">
-    <div class="container">
-        <div class="columns">
-            <div class="column">
-                <img src="/img/ind-1.png" />
-            </div>
-            <div class="column"></div>
-            <div class="column">
-                <h1 class="is-size-3">Make Friends</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                    culpa qui officia deserunt mollit anim id est laborum.</p>
-            </div>
-        </div>
-        <div class="columns reverse">
-            <div class="column">
-                <h1 class="is-size-3">Verified Drivers</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                    culpa qui officia deserunt mollit anim id est laborum.</p>
-            </div>
-            <div class="column"></div>
-            <div class="column">
-                <img src="/img/ind-2.png" />
-            </div>
-        </div>
-        <div class="columns">
-            <div class="column">
-                <img src="/img/ind-3.png" />
-            </div>
-            <div class="column"></div>
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <img src="/img/ind-1.png" />
+      </div>
+      <div class="column"></div>
+      <div class="column">
+        <h1 class="is-size-3">Make Friends</h1>
+        <p>Tired of fighting to stay awake on your morning commute? Feeling like you are wasting time sitting in traffic
+          coming back from work? Maybe you need a commuter friend to keep awake and shoot the breeze while traveling
+          those long miles to and from different cities, making the time zip by. Our app encourages forging friendships
+          with the riders that you take or the drivers that you ride with. Who knows? Maybe you’ll discover someone or
+          something new!</p>
+      </div>
+    </div>
+    <div class="columns reverse">
+      <div class="column">
+        <h1 class="is-size-3">Verified Drivers</h1>
+        <p>Our drivers and riders are safe. We want you to have the best experience and build the best communities and
+          relationships so all of our drivers and riders are closely verified.</p>
+      </div>
+      <div class="column"></div>
+      <div class="column">
+        <img src="/img/ind-2.png" />
+      </div>
+    </div>
+    <div class="columns">
+      <div class="column">
+        <img src="/img/ind-3.png" />
+      </div>
+      <div class="column"></div>
 
-            <div class="column">
-                <h1 class="is-size-3">Real Communities</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                    culpa qui officia deserunt mollit anim id est laborum.</p>
-            </div>
-        </div>
+      <div class="column">
+        <h1 class="is-size-3">Real Communities</h1>
+        <p>With our app, we are really striving to build relationships and communities. We want neighbors to meet each
+          other and discuss the latest sports or music or politics and get to know each other. Maybe you’ll learn about
+          a new instrument or chat about the latest election. Maybe you’ll start a revolution in the car with your car
+          buddy. Keep your mind open and you may experience an amazing adventure with your car buddies.</p>
+      </div>
     </div>
-    <div class="has-text-centered" style="align-self: center; margin-top:50px;">
-        <a href="/sign-up" class="button is-large is-rounded " style="background-color:#FFD20D; color:#666;border:none">
-            Sign Up
-        </a>
-    </div>
+  </div>
+  <div class="has-text-centered" style="align-self: center; margin-top:50px;">
+    <a href="/sign-up" class="button is-large is-rounded " style="background-color:#FFD20D; color:#666;border:none">
+      Sign Up
+    </a>
+  </div>
 </div>
 <div class="section has-background-dark is-fullwidth has-text-white" style="width:100%; margin-top:50px;">
-    <div class="container">
-        <div class="columns">
-            <div class="column">
-                Copyright Carfew
-            </div>
-        </div>
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        Copyright Carfew
+      </div>
     </div>
+  </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <script>
-    $(document).ready(function () {
-        var $toggle = $('#nav-toggle');
-        var $menu = $('#nav-menu');
+  $(document).ready(function () {
+    var $toggle = $('#nav-toggle');
+    var $menu = $('#nav-menu');
 
-        $('.carfew-img').addClass('active');
+    $('.carfew-img').addClass('active');
 
-        $toggle.click(function () {
-            $(this).toggleClass('is-active');
-            $menu.toggleClass('is-active');
-        });
-
-        $('.modal-button').click(function () {
-            var target = $(this).data('target');
-            $('html').addClass('is-clipped');
-            $(target).addClass('is-active');
-        });
-
-        $('.modal-background, .modal-close').click(function () {
-            $('html').removeClass('is-clipped');
-            $(this).parent().removeClass('is-active');
-        });
-
-        $('.modal-card-head .delete, .modal-card-foot .button').click(function () {
-            $('html').removeClass('is-clipped');
-            $('#modal-ter').removeClass('is-active');
-        });
-
-        var $highlights = $('.highlight');
-
-        $highlights.each(function () {
-            var $el = $(this);
-            var copy = '<button class="copy">Copy</button>';
-            var expand = '<button class="expand">Expand</button>';
-            $el.append(copy);
-
-            if ($el.find('pre code').innerHeight() > 600) {
-                $el.append(expand);
-            }
-        });
-
-        var $highlightButtons = $('.highlight .copy, .highlight .expand');
-
-        $highlightButtons.hover(function () {
-            $(this).parent().css('box-shadow', '0 0 0 1px #ed6c63');
-        }, function () {
-            $(this).parent().css('box-shadow', 'none');
-        });
-
-        $('.highlight .expand').click(function () {
-            $(this).parent().children('pre').css('max-height', 'none');
-        });
+    $toggle.click(function () {
+      $(this).toggleClass('is-active');
+      $menu.toggleClass('is-active');
     });
+
+    $('.modal-button').click(function () {
+      var target = $(this).data('target');
+      $('html').addClass('is-clipped');
+      $(target).addClass('is-active');
+    });
+
+    $('.modal-background, .modal-close').click(function () {
+      $('html').removeClass('is-clipped');
+      $(this).parent().removeClass('is-active');
+    });
+
+    $('.modal-card-head .delete, .modal-card-foot .button').click(function () {
+      $('html').removeClass('is-clipped');
+      $('#modal-ter').removeClass('is-active');
+    });
+
+    var $highlights = $('.highlight');
+
+    $highlights.each(function () {
+      var $el = $(this);
+      var copy = '<button class="copy">Copy</button>';
+      var expand = '<button class="expand">Expand</button>';
+      $el.append(copy);
+
+      if ($el.find('pre code').innerHeight() > 600) {
+        $el.append(expand);
+      }
+    });
+
+    var $highlightButtons = $('.highlight .copy, .highlight .expand');
+
+    $highlightButtons.hover(function () {
+      $(this).parent().css('box-shadow', '0 0 0 1px #ed6c63');
+    }, function () {
+      $(this).parent().css('box-shadow', 'none');
+    });
+
+    $('.highlight .expand').click(function () {
+      $(this).parent().children('pre').css('max-height', 'none');
+    });
+  });
 
 </script>
