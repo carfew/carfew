@@ -6,17 +6,17 @@ const should = chai.should();
 
 chai.use(chaiHttp);
 
-/** Require Models **/
+/** Require Models * */
 const User = require('../models/user.model');
 
-/** Test Objects **/
+/** Test Objects * */
 const testUser = {
-    firstName: "John",
-    lastName: "Smith",
-    username: "JSmith",
-    email: "jsmith@gmail.com",
-    phone: "0000000000",
-    password: "something"
+    firstName: 'John',
+    lastName: 'Smith',
+    username: 'JSmith',
+    email: 'jsmith@gmail.com',
+    phone: '0000000000',
+    password: 'something'
 };
 
 describe('User', () => {
@@ -29,7 +29,7 @@ describe('User', () => {
                 .get(`/users/${user._id}`)
                 .end((err, res) => {
                     res.should.have.status(200);
-                    res.should.be.json;
+                    res.should.be.html;
                     done();
                 });
         });
@@ -39,6 +39,8 @@ describe('User', () => {
     it('should delete user on /users/<id> DELETE', (done) => {
         const user = new User(testUser);
         user.save(() => {
+            const userID = user._id;
+            console.log('USER ID:', userID);
             chai.request(server)
                 .delete(`/users/${user._id}?_method=DELETE`)
                 .end((err, res) => {
