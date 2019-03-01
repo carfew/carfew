@@ -17,9 +17,15 @@ module.exports = app => {
         }
 
         try {
-            const rides = await Ride.find({}).populate('rider');
+            // only show posted rides where current user is not the rider
+            const decodedID = decoded._id;
+            const rides = await Ride.find({
+                status: 'posted',
+                rider: { $ne: decodedID }
+            }).populate('rider');
+            // show all of the current user's rides 
             const userRides = await Ride.find({
-                $or: [{ rider: decoded._id }, { driver: decoded._id }]
+                rider: decoded._id
             }).populate('rider');
 
             // await rides.populate('rider');
