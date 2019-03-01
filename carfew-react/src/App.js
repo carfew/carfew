@@ -1,32 +1,35 @@
 /* global google */
-import React, { Component } from "react";
-import withStyles from "react-jss";
-import classnames from "classnames";
-import { withScriptjs } from "react-google-maps";
-import axios from "axios";
-import indigo from "@material-ui/core/colors/indigo";
-import _ from "underscore";
-import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+import React, { Component } from 'react';
+import withStyles from 'react-jss';
+import classnames from 'classnames';
+import { withScriptjs } from 'react-google-maps';
+import axios from 'axios';
+import indigo from '@material-ui/core/colors/indigo';
+import _ from 'underscore';
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Button from '@material-ui/core/Button';
 
-import "./index.css";
+import CarfewWindow from './comp/CarfewWindow.jsx';
+import MapComponent from './comp/MapComponent.jsx';
+import { Typography } from '@material-ui/core';
+import './index.css';
 
-import CarfewWindow from "./comp/CarfewWindow.jsx";
-import MapComponent from "./comp/MapComponent.jsx";
-
-window.API_URL = "";
+window.API_URL = 'http://localhost:8081';
 
 const styles = {
   root: {
-    height: "100vh",
-    width: "100vw",
-    overflow: "hidden"
+    height: '100vh',
+    width: '100vw',
+    overflow: 'hidden'
   },
   mapView: {
-    position: "absolute",
+    position: 'absolute',
     top: 0,
     left: 0,
-    width: "100vw",
-    height: "100vh",
+    width: '100vw',
+    height: '100vh',
     zIndex: 0
   }
 };
@@ -53,7 +56,8 @@ class App extends Component {
       allRides: false,
       myRides: [],
       newRide: false,
-      directions: null
+      directions: null,
+      username: ''
     };
   }
 
@@ -74,9 +78,10 @@ class App extends Component {
       rides = res.data.rides;
     }
     this.setState({
-      shownRides: rides.filter(t => t.status === "posted"),
+      shownRides: rides.filter(t => t.status === 'posted'),
       rides,
-      myRides: res.data.userRides
+      myRides: res.data.userRides,
+      username: res.data.username
     });
   };
 
@@ -104,7 +109,7 @@ class App extends Component {
       });
     } else {
       this.setState({
-        shownRides: this.state.rides.filter(t => t.status === "posted"),
+        shownRides: this.state.rides.filter(t => t.status === 'posted'),
         allRides: false
       });
     }
@@ -139,7 +144,24 @@ class App extends Component {
     const { classes } = this.props;
     return (
       <MuiThemeProvider theme={theme}>
-        <div className={classnames(classes.root, "App")}>
+        <div className={classnames(classes.root, 'App')}>
+          <AppBar>
+            <Toolbar>
+              <Typography variant="h6" color="inherit" style={{ flexGrow: 1 }}>
+                <a href="/">
+                  <Button color="inherit">Carfew</Button>
+                </a>
+              </Typography>
+              <a href="/dashboard">
+                <Button color="inherit">
+                  {this.state.username}'s Dashboard
+                </Button>
+              </a>
+              <a href="/logout">
+                <Button color="inherit">Logout</Button>
+              </a>
+            </Toolbar>
+          </AppBar>
           <CarfewWindow
             changeAddress={this.changeAddress}
             origin={this.state.origin}
@@ -159,7 +181,7 @@ class App extends Component {
             mapRef={this.mapRef}
             origin={this.state.origin}
             dest={this.state.dest}
-            googleMapURL={"/"}
+            googleMapURL={'/'}
             changeRoute={this.changeRoute}
             loadingElement={<div style={{ height: `100%` }} />}
             containerElement={<div className={classes.mapView} />}

@@ -1,32 +1,32 @@
-import React, { Component } from "react";
-import Typography from "@material-ui/core/Typography";
-import axios from "axios";
-import { withStyles } from "@material-ui/core";
-import PersonPin from "@material-ui/icons/PersonPin";
-import { classnames } from "classnames";
+import React, { Component } from 'react';
+import Typography from '@material-ui/core/Typography';
+import axios from 'axios';
+import { withStyles } from '@material-ui/core';
+import PersonPin from '@material-ui/icons/PersonPin';
+import { classnames } from 'classnames';
 
 const styles = {
   ride: {
-    display: "flex",
+    display: 'flex',
     padding: 10,
     minHeight: 75,
     margin: 10,
-    boxShadow: "0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.14)",
+    boxShadow: '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.14)',
     borderRadius: 5,
-    background: "#fff",
-    transition: "0.2s",
-    cursor: "pointer",
-    "&:hover": {
-      background: "#f9f9f9"
+    background: '#fff',
+    transition: '0.2s',
+    cursor: 'pointer',
+    '&:hover': {
+      background: '#f9f9f9'
     }
   },
   userInfo: {
     marginLeft: 5,
-    display: "flex",
-    flexFlow: "column",
-    alignItems: "flex-start",
+    display: 'flex',
+    flexFlow: 'column',
+    alignItems: 'flex-start',
     flex: 1,
-    borderRight: "1px solid #ccc"
+    borderRight: '1px solid #ccc'
   },
   rideInfo: {
     padding: 5,
@@ -48,11 +48,11 @@ class Ride extends Component {
   getType = () => {
     let border;
     switch (this.props.ride.status) {
-      case "proposed":
-        border = "2px solid #69B053";
+      case 'proposed':
+        border = '2px solid #69B053';
         break;
       default:
-        border = "";
+        border = '';
     }
     return border;
   };
@@ -71,7 +71,7 @@ class Ride extends Component {
         }}
       >
         <div className={classes.userImage}>
-          <PersonPin style={{ height: "100%", fontSize: "3em" }} />
+          <PersonPin style={{ height: '100%', fontSize: '3em' }} />
         </div>
         <div className={classes.userInfo}>
           {ride.rider && (

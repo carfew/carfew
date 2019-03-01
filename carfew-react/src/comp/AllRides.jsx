@@ -1,52 +1,52 @@
-import React, { Component } from "react";
-import withStyles from "react-jss";
-import Button from "@material-ui/core/Button";
-import Typography from "@material-ui/core/Typography";
-import axios from "axios";
-import Icon from "@material-ui/core/Icon";
-import Modal from "@material-ui/core/Modal";
+import React, { Component } from 'react';
+import withStyles from 'react-jss';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
+import axios from 'axios';
+import Icon from '@material-ui/core/Icon';
+import Modal from '@material-ui/core/Modal';
 
-import geolib from "geolib";
+import geolib from 'geolib';
 
-import SingleRide from "./SingleRide";
-import Ride from "./Ride";
-import { runInThisContext } from "vm";
+import SingleRide from './SingleRide';
+import Ride from './Ride';
+import { runInThisContext } from 'vm';
 
 const styles = {
   root: {
-    display: "flex",
-    flexFlow: "column"
+    display: 'flex',
+    flexFlow: 'column'
   },
   paper: {
-    position: "absolute",
+    position: 'absolute',
     width: 300,
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%,-50%)",
-    backgroundColor: "#fff",
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%,-50%)',
+    backgroundColor: '#fff',
     padding: 30,
-    outline: "none"
+    outline: 'none'
   },
   ride: {
-    display: "flex",
+    display: 'flex',
     padding: 10,
     margin: 10,
-    boxShadow: "0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.14)",
+    boxShadow: '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.14)',
     borderRadius: 5,
-    background: "#fff",
-    transition: "0.2s",
-    cursor: "pointer",
-    "&:hover": {
-      background: "#f9f9f9"
+    background: '#fff',
+    transition: '0.2s',
+    cursor: 'pointer',
+    '&:hover': {
+      background: '#f9f9f9'
     }
   },
   userInfo: {
     marginLeft: 5,
-    display: "flex",
-    flexFlow: "column",
-    alignItems: "flex-start",
+    display: 'flex',
+    flexFlow: 'column',
+    alignItems: 'flex-start',
     flex: 1,
-    borderRight: "1px solid #ccc"
+    borderRight: '1px solid #ccc'
   },
   rideInfo: {
     padding: 5,
@@ -56,13 +56,13 @@ const styles = {
     height: 100,
     borderRadius: 10,
     margin: 10,
-    boxSizing: "border-box",
-    color: "#ccc",
-    display: "flex",
-    flexFlow: "column",
-    justifyContent: "center",
-    alignItems: "center",
-    background: "#eee"
+    boxSizing: 'border-box',
+    color: '#ccc',
+    display: 'flex',
+    flexFlow: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    background: '#eee'
   }
 };
 
@@ -81,7 +81,7 @@ class AllRides extends Component {
 
   getFrom = ride => {
     const ri = ride.origin.address_components.find(r => {
-      return r.types.indexOf("locality") > -1;
+      return r.types.indexOf('locality') > -1;
     });
     if (ri) {
       return ri.short_name;
@@ -91,7 +91,7 @@ class AllRides extends Component {
   };
   getTo = ride => {
     const ri = ride.destination.address_components.find(r => {
-      return r.types.indexOf("locality") > -1;
+      return r.types.indexOf('locality') > -1;
     });
     if (ri) {
       return ri.short_name;
@@ -163,7 +163,7 @@ class AllRides extends Component {
             showRoute={this.props.showRoute}
             isUsers={this.state.isUsers}
           />
-          <div style={{ display: "flex", justifyContent: "space-between" }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
             <Button onClick={this.handleBack} color="secondary">
               Back
             </Button>
@@ -212,19 +212,19 @@ class AllRides extends Component {
           <Typography variant="h4">Rides</Typography>
           <div
             style={{
-              display: "flex",
-              flexFlow: "column",
-              overflow: "scroll",
-              maxHeight: "80vh",
+              display: 'flex',
+              flexFlow: 'column',
+              overflow: 'scroll',
+              maxHeight: '80vh',
               paddingTop: 30
             }}
           >
             <div
               style={{
-                width: "100%",
-                display: "flex",
+                width: '100%',
+                display: 'flex',
                 minHeight: 20,
-                justifyContent: "space-between"
+                justifyContent: 'space-between'
               }}
             >
               <Typography variant="caption">
@@ -235,7 +235,7 @@ class AllRides extends Component {
                 onClick={this.props.toggleShowAll}
                 style={{
                   opacity: this.props.allRides ? 1 : 0.3,
-                  cursor: "pointer"
+                  cursor: 'pointer'
                 }}
               >
                 Show All
@@ -256,6 +256,7 @@ class AllRides extends Component {
             <Typography variant="caption">
               My Rides (requested and accepted)
             </Typography>
+
             {this.props.userRides.length > 0 ? (
               this.props.userRides.map(ride => {
                 return (
@@ -275,11 +276,53 @@ class AllRides extends Component {
               </div>
             )}
           </div>
+          <div>
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+              <div
+                style={{
+                  width: 20,
+                  height: 10,
+                  marginRight: 5,
+                  border: '0.05px solid #ddd',
+                  background: '#fff'
+                }}
+              />{' '}
+              <span>
+                <Typography variant="caption">- posted</Typography>
+              </span>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+              <div
+                style={{
+                  width: 20,
+                  height: 10,
+                  marginRight: 5,
+                  background: '#B3DAFB'
+                }}
+              />{' '}
+              <span>
+                <Typography variant="caption">- proposed</Typography>
+              </span>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+              <div
+                style={{
+                  width: 20,
+                  height: 10,
+                  marginRight: 5,
+                  background: '#69B053'
+                }}
+              />{' '}
+              <span>
+                <Typography variant="caption">- accepted</Typography>
+              </span>
+            </div>
+          </div>
           <Button
             style={{
               marginTop: 30,
-              width: "fit-content",
-              alignSelf: "flex-end"
+              width: 'fit-content',
+              alignSelf: 'flex-end'
             }}
             variant="contained"
             color="primary"
