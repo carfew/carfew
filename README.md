@@ -10,12 +10,13 @@
 * [The Team](https://github.com/carfew/carfew/tree/dev#who-are-the-carfew-dev-team--)
 * [File Structure](https://github.com/carfew/carfew/tree/dev#file-structure-)
 * [Endpoints](https://github.com/carfew/carfew/tree/dev#endpoints)
-  * [Rides Endpoints](https://github.com/carfew/carfew/tree/dev#rides)
-  * [Auth Endpoints](https://github.com/carfew/carfew/tree/dev#authentication)
-* [APIs](https://github.com/carfew/carfew/tree/dev#api-integration---what-apis-are-we-using)
-* [Running](https://github.com/carfew/carfew/tree/dev#running)
-* [Testing](https://github.com/carfew/carfew/tree/dev#testing)
-* [Contact Info](https://github.com/carfew/carfew/tree/dev#additional-contact-info)
+  * [Rides Endpoints](https://github.com/carfew/carfew/tree/dev#rides-)
+  * [Users Endpoints](https://github.com/carfew/carfew/tree/dev#users--)
+  * [Auth Endpoints](https://github.com/carfew/carfew/tree/dev#authentication-)
+* [APIs](https://github.com/carfew/carfew/tree/dev#api-integration---what-apis-are-we-using--)
+* [Running](https://github.com/carfew/carfew/tree/dev#running-)
+* [Testing](https://github.com/carfew/carfew/tree/dev#testing-)
+* [Contact Info](https://github.com/carfew/carfew/tree/dev#additional-contact-info-)
 
 ## What is Carfew? 🚘
 Carfew is a new, innovative ride-sharing solution for those who want to meet new people 👋. With Carfew, you drive to make connections and meet people who like the same things that you do.
