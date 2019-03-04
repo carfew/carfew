@@ -196,6 +196,9 @@ th, td {
   text-align: center;
   padding: 8px;
 }
+.riderTable, .driverTable {
+  display: inline-block;
+}
 
 tr:nth-child(even){background-color: #f2f2f2}
 
@@ -224,33 +227,55 @@ tr:nth-child(even){background-color: #f2f2f2}
 </ul>
 </div>
 <br><br><br>
+
+
+  <table id="riderTable">
+    <tr>
+      <th>Rider</th>
+    </tr>
+  <div class="cell" style="background-color: blue;">
+    <table>
+       <tr>
+          <td>Rider: bob</td>
+        </tr>
+        <tr>
+          <td>Driver: pam</td>
+        </tr>
+    </table>
+  </div>
+  </table>
+
+
+  <table id="driverTable">
+    <tr>
+      <th>Driver</th>
+    </tr>
+  <div class="cell" style="background-color: blue;">
+    <table>
+       <tr>
+          <td>Rider: bob</td>
+        </tr>
+        <tr>
+          <td>Driver: pam</td>
+        </tr>
+    </table>
+  </div>
+  </table>
+
+
 <div class="userInfo">
     <p id="firstName">FirstName</p>
     <p id="lastName">LastName</p>
     <br>
     <button id="editBtn">edit</button>
     <br><br>
-    <div style="overflow-x:auto;">
-  <table>
-    <tr>
-      <th>Rider</th>
-    </tr>
-    <tr>
-      <td>Jill</td>
-    </tr>
-  </table>
 </div>
-
-
-    <div style="background-color: pink;">
-      <p>Driver</p>
-    </div>
 
     <br>
     <button>Logout</button>
     <br><br><br>
     <button>Delete Account</button>
-</div>
+
 
 
 </body>
