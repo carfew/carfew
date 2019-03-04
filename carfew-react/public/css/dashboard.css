@@ -175,3 +175,10 @@ a {
 #editBtn {
     font-size: 18px;
 }
+
+.scroll-box {
+    height: 200px;
+    width: 300px;
+    border: 2px;
+    overflow: auto;
+}
