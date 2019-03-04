@@ -3,22 +3,30 @@
 <div class="row">
     <div class="scroll-box col-md-6">
         <h3>Rides I've requested: </h3>
-        {{#each userRides}}
-            <p>Rider: {{this.rider.username}}</p>
-            <p>Driver: {{this.driver}}</p>
-            <p>Status: {{this.status}}</p>
-            <p>Destination: {{this.destination.formatted_address}}</p>
-        {{/each}}
+        {{#if userRides}}
+            {{#each userRides}}
+                <p>Rider: {{this.rider.username}}</p>
+                <p>Driver: {{this.driver}}</p>
+                <p>Status: {{this.status}}</p>
+                <p>Destination: {{this.destination.formatted_address}}</p>
+            {{/each}}
+        {{else}}
+        <a href="/app" style="color: purple;">Click here to request a new ride.</a>
+        {{/if}}
     </div>
 
     <div class="scroll-box col-md-6">
         <h3>Rides I've accepted: </h3>
-        {{#each userDrives}}
-        <p>Rider: {{this.rider.username}}</p>
-        <p>Driver: {{this.driver}}</p>
-        <p>Status: {{this.status}}</p>
-        <p>Destination: {{this.destination.formatted_address}}</p>
-        {{/each}}
+        {{#if userDrives}}
+            {{#each userDrives}}
+            <p>Rider: {{this.rider.username}}</p>
+            <p>Driver: {{this.driver}}</p>
+            <p>Status: {{this.status}}</p>
+            <p>Destination: {{this.destination.formatted_address}}</p>
+            {{/each}}
+        {{else}}
+            <a href="/app" style="color: purple;">Click here to browse rides requested by other drivers.</a>
+        {{/if}}
     </div>
 </div>
 
@@ -26,7 +34,13 @@
     <h2>Hello {{user.username}}!</h2>
     <p id="firstName">{{user.firstName}}</p>
     <p id="lastName">{{user.lastName}}</p>
-    <button id="editBtn">edit</button>
-    <button>Logout</button>
-    <button>Delete Account</button>
+    <a href="/users/edit">
+        <button id="editBtn">edit</button>
+    </a>
+    <a href="/logout">
+        <button>Logout</button>
+    </a>
+    <a href="/users/delete">
+        <button>Delete Account</button>
+    </a>
 </div>
