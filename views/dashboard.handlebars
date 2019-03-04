@@ -2,23 +2,31 @@
 <link rel="stylesheet" href="/css/dashboard.css">
 <div class="row">
     <div class="scroll-box col-md-6">
-        scroll box
+        <h3>Rides I've requested: </h3>
+        {{#each userRides}}
+            <p>Rider: {{this.rider.username}}</p>
+            <p>Driver: {{this.driver}}</p>
+            <p>Status: {{this.status}}</p>
+            <p>Destination: {{this.destination.formatted_address}}</p>
+        {{/each}}
     </div>
 
     <div class="scroll-box col-md-6">
-        scroll box
+        <h3>Rides I've accepted: </h3>
+        {{#each userDrives}}
+        <p>Rider: {{this.rider.username}}</p>
+        <p>Driver: {{this.driver}}</p>
+        <p>Status: {{this.status}}</p>
+        <p>Destination: {{this.destination.formatted_address}}</p>
+        {{/each}}
     </div>
 </div>
 
-<br><br><br>
 <div class="userInfo">
     <h2>Hello {{user.username}}!</h2>
     <p id="firstName">{{user.firstName}}</p>
     <p id="lastName">{{user.lastName}}</p>
-    <br>
     <button id="editBtn">edit</button>
-    <br>
     <button>Logout</button>
-    <br><br><br>
     <button>Delete Account</button>
 </div>
