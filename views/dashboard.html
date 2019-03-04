@@ -1,0 +1,257 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+</head>
+
+<style type="text/css">
+html {
+  font-size: 75%;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+body {
+  font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
+  /*margin: 110px auto 0 auto;*/
+  width: 100%;
+  /*max-width: 260px;*/
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  text-align: left;
+  width: 132px;
+}
+
+.dropdown-text {
+  cursor: pointer;
+  position: absolute;
+  text-indent: 10px;
+  line-height: 32px;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-shadow: 0 1px 0 rgba(255,255,255, .9) inset, 0 1px 3px rgba(0,0,0, .1);
+  width: 100%;
+}
+
+.dropdown-text:after {
+  position: absolute;
+  right: 6px;
+  top: 15px;
+  content: '';
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 5px 4px 0 4px;
+  border-color: #555 transparent transparent transparent;
+}
+
+.dropdown-text,
+.dropdown-content > a {
+  color: black;
+  text-shadow: 0 1px #fff;
+}
+
+.dropdown-toggle {
+  font-size: 0;
+  z-index: 1;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  border: none;
+  padding: 0;
+  margin: 0 0 0 1px;
+  background: transparent;
+  text-indent: -10px;
+  height: 34px;
+  width: 100%;
+}
+
+.dropdown-toggle:focus {
+  outline: 0;
+}
+
+.dropdown-content {
+  -webkit-transition: all .25s ease;
+  -moz-transition: all .25s ease;
+  -ms-transition: all .25s ease;
+  -o-transition: all .25s ease;
+  transition: all .25s ease;
+  list-style-type: none;
+  position: absolute;
+  top: 32px;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  visibility:hidden;
+  border-radius: 3px;
+  text-indent: 10px;
+  line-height: 32px;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  width: 140px;
+}
+
+.dropdown-content > a {
+  display: block;
+}
+
+.dropdown-content > a:hover {
+  background: #e8e8e8;
+}
+
+.dropdown-toggle:hover ~ .dropdown-text,
+.dropdown-toggle:focus ~ .dropdown-text {
+  background-color: #e8e8e8;
+}
+
+.dropdown-toggle:focus ~ .dropdown-text {
+  box-shadow: 0 1px 3px rgba(0,0,0, .2) inset, 0 1px 0 rgba(255,255,255, 0.8);
+  z-index: 2;
+}
+
+.dropdown-toggle:focus ~ .dropdown-text:after {
+  border-width: 0 4px 5px 4px;
+  border-color: transparent transparent #555 transparent;
+}
+
+.dropdown-content:hover,
+.dropdown-toggle:focus ~ .dropdown-content {
+  opacity: 1;
+  visibility:visible;
+  top: 42px;
+}
+
+.footer {
+    background-color: #8C97D9;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    padding-left: -20px;
+    width: 100%;
+}
+
+.footer > a {
+    font-family: 'Roboto-bold', sans-serif;
+    color: white;
+    position: absolute;
+    right: 0px;
+    width: 100%;
+    float: right;
+}
+
+.footer > ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #8C97D9;
+  float: right;
+}
+
+.footer > ul > li {
+  text-align: center;
+  display: inline-block;
+}
+
+.footer > ul> li > a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 18px;
+  font-family: 'Roboto-bold', sans-serif;
+}
+
+.userInfo {
+    font-size: 22px;
+}
+
+#firstName, #lastName {
+    display: inline-block;
+    color: gray;
+}
+
+#editBtn {
+    font-size: 18px;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 20%;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+th, td {
+  text-align: center;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+</style>
+<body>
+
+<div class="footer">
+<ul>
+  <li><a href="#">HOME</a></li>
+  <li><a href="#">RIDES</a></li>
+  <li><a href="#">LOGIN</a></li>
+  <li><a href="#">SIGN UP</a></li>
+  <li><a href="#">PROFILE</a></li>
+  <li><a href="#">LOGOUT</a></li>
+
+  <!-- <div class="dropdown">
+  <input class="dropdown-toggle" type="text">
+  <div class="dropdown-text">Profile</div>
+  <ul class="dropdown-content">
+    <li><a href="#">Settings</a></li>
+    <li><a href="#">Rides</a></li>
+    <li><a href="#">Log out</a></li>
+  </ul>
+
+</div> -->
+</ul>
+</div>
+<br><br><br>
+<div class="userInfo">
+    <p id="firstName">FirstName</p>
+    <p id="lastName">LastName</p>
+    <br>
+    <button id="editBtn">edit</button>
+    <br><br>
+    <div style="overflow-x:auto;">
+  <table>
+    <tr>
+      <th>Rider</th>
+    </tr>
+    <tr>
+      <td>Jill</td>
+    </tr>
+  </table>
+</div>
+
+
+    <div style="background-color: pink;">
+      <p>Driver</p>
+    </div>
+
+    <br>
+    <button>Logout</button>
+    <br><br><br>
+    <button>Delete Account</button>
+</div>
+
+
+</body>
+</html>
