@@ -9,7 +9,7 @@
 * [About Carfew](https://github.com/carfew/carfew/tree/dev#what-is-carfew-)
 * [The Team](https://github.com/carfew/carfew/tree/dev#who-are-the-carfew-dev-team--)
 * [File Structure](https://github.com/carfew/carfew/tree/dev#file-structure-)
-* [See the App](https://github.com/carfew/carfew/tree/dev#Current Build)
+* [See the App](https://github.com/carfew/carfew#current-build)
 * [APIs](https://github.com/carfew/carfew/tree/dev#api-integration---what-apis-are-we-using--)
 * [Running](https://github.com/carfew/carfew/tree/dev#running-)
 * [Testing](https://github.com/carfew/carfew/tree/dev#testing-)
