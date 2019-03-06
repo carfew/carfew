@@ -202,6 +202,56 @@ th, td {
 
 tr:nth-child(even){background-color: #f2f2f2}
 
+#profileHeader {
+  color: pink;
+  /*position: static;*/
+  /*left: 0;*/
+}
+.outie {
+  text-align: center;
+  background-color: #8C97D9;
+  /*padding: 5px;*/
+  border-radius: 10px;
+}
+.outie2 {
+  text-align: center;
+  background-color: #8C97D9;
+
+  /*padding: 5px;*/
+  border-radius: 10px;
+}
+.outie, .outie2 {
+  display: inline-block;
+  margin: 20px;
+  height: 225px;
+  width: 350px;
+}
+.innie {
+  background-color: white;
+  color: gray;
+  height: 75px;
+  width: 300px;
+  box-sizing: content-box;
+  padding: 15px;
+  border: 10px solid #8C97D9;
+  border-radius: 10px;
+}
+#riderMainText {
+  text-align: center;
+  /*background-color: #8C97D9;*/
+  /*height: 10%;*/
+  color: white;
+  width: 100%;
+  font-size: 24px;
+  line-height: 50px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin: 0;
+}
+#riderInfo {
+  margin: 0;
+  font-size: 14px;
+}
 </style>
 <body>
 
@@ -226,55 +276,42 @@ tr:nth-child(even){background-color: #f2f2f2}
 </div> -->
 </ul>
 </div>
-<br><br><br>
+<br><br><br><br>
 
-
-  <table id="riderTable">
-    <tr>
-      <th>Rider</th>
-    </tr>
-  <div class="cell" style="background-color: blue;">
-    <table>
-       <tr>
-          <td>Rider: bob</td>
-        </tr>
-        <tr>
-          <td>Driver: pam</td>
-        </tr>
-    </table>
+<!-- <h1 id="profileHeader">Profile</h1> -->
+<div class="outie"> <p id="riderMainText">Rider</p>
+  <div class="innie">
+    <p id="riderInfo">Rider: Name</p>
+    <p id="riderInfo">Driver: Name</p>
+    <p id="riderInfo">Duration: 1.2 Miles</p>
+    <p id="riderInfo">Destination: Santa Fran</p>
+    <p id="riderInfo">Status: Online ✳️</p>
   </div>
-  </table>
+</div>
 
-
-  <table id="driverTable">
-    <tr>
-      <th>Driver</th>
-    </tr>
-  <div class="cell" style="background-color: blue;">
-    <table>
-       <tr>
-          <td>Rider: bob</td>
-        </tr>
-        <tr>
-          <td>Driver: pam</td>
-        </tr>
-    </table>
+<div class="outie2"> <p id="riderMainText">Driver</p>
+  <div class="innie">
+    <p id="riderInfo">Rider: Name</p>
+    <p id="riderInfo">Driver: Name</p>
+    <p id="riderInfo">Duration: 1.2 Miles</p>
+    <p id="riderInfo">Destination: Santa Fran</p>
+    <p id="riderInfo">Status: Online ✳️</p>
   </div>
-  </table>
+</div>
 
 
 <div class="userInfo">
-    <p id="firstName">FirstName</p>
-    <p id="lastName">LastName</p>
+    <p id="firstName">John</p>
+    <p id="lastName">Wick</p>
     <br>
-    <button id="editBtn">edit</button>
+    <button id="editBtn">edit profile</button>
     <br><br>
 </div>
 
     <br>
-    <button>Logout</button>
+    <!-- <button>Logout</button> -->
     <br><br><br>
-    <button>Delete Account</button>
+    <button style="background-color: red; color: white">Delete Account</button>
 
 
 
