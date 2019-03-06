@@ -22,10 +22,10 @@ module.exports = (app) => {
             token = await jwt.sign({ _id: user._id }, process.env.SECRET, { expiresIn: '60 days' });
             res.cookie('rideToken', token, {
                 maxAge: 900000,
-                httpOnly: true,
+                httpOnly: true
             });
-            res.redirect('/dashboard');
-            // res.redirect('/app');
+            // res.redirect('/dashboard');
+            res.redirect('/app');
         } catch (err) {
             console.log(err);
         }
@@ -33,10 +33,7 @@ module.exports = (app) => {
 
     app.post('/login', async (req, res) => {
         const {
-            username,
-            email,
-            phone,
-            password
+            username, email, phone, password
         } = req.body;
         // Find this username
         const user = await User.findOne({ username }, 'username password');
@@ -46,27 +43,31 @@ module.exports = (app) => {
                 const user = await User.findOne({ phone }, 'username password');
             }
             return res.status(401).send({
-                message: 'Did you sign up? Wrong username or password!',
+                message: 'Did you sign up? Wrong username or password!'
             });
         }
         user.comparePassword(password, (err, isMatch) => {
             if (!isMatch) {
                 return res.status(401).send({
-                    message: 'Password is not valid!',
+                    message: 'Password is not valid!'
                 });
             }
-            const token = jwt.sign({
-                _id: user._id,
-                username: user.username,
-            }, process.env.SECRET, {
-                expiresIn: '60 days',
-            });
+            const token = jwt.sign(
+                {
+                    _id: user._id,
+                    username: user.username
+                },
+                process.env.SECRET,
+                {
+                    expiresIn: '60 days'
+                }
+            );
             res.cookie('rideToken', token, {
                 maxAge: 900000,
-                httpOnly: true,
+                httpOnly: true
             });
-            res.redirect('/dashboard');
-            // return res.redirect('/app');
+            // res.redirect('/dashboard');
+            return res.redirect('/app');
         });
     });
 

@@ -12,11 +12,15 @@ module.exports = (app) => {
         // Find all the rides where current user is rider
         const userRides = await Ride.find({
             rider: user._id
-        }).populate('rider');
+        })
+            .populate('rider')
+            .populate('driver');
         // Find all the rides where current user is driver
         const userDrives = await Ride.find({
             driver: user._id
-        }).populate('driver');
+        })
+            .populate('driver')
+            .populate('rider');
         // Find all the notification where current user is involved
         const notifications = await Notification.find({
             $or: [{ rider: user._id }, { driver: user._id }]
