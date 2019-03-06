@@ -34,6 +34,29 @@ Additionally, we are interested in understanding city infrastructure and being g
 
 Building an app that can help to limit the number of vehicles moving around the city will help make the air more breathable and the streets safer for everyone.
 
+## Getting Started 🏃
+If you would like to see the current, live version of Carfew, simply visit https://www.carfew.app/.
+
+If you would like to run the app on your local server, you can fork and/or clone the repo. From the root route, type 'npm run starter' and the 'npm run dev' to build the react app.
+
+Every subsequent time that you run the app without pulling updated code you can simply run 'npm run start'.
+
+If you pull updated code from the master branch, please use 'npm run dev' so that you re-build the react app again.
+
+## Current Build
+
+### Landing Page
+<p align="center">
+    <img src="carfew-react/public/img/landing-page.png"
+         alt="Landing page"/>
+</p>
+
+### React App with Google API
+<p align="center">
+    <img src="carfew-react/public/img/react-app.png"
+         alt="React page"/>
+</p>
+
 ## Who are the Carfew dev team? 👩‍💻 👨‍💻
 Our core developers are:
 ### Erik Batista ✨
@@ -96,6 +119,16 @@ root/
 |-- misc
 ```
 
+## API Integration - What APIs are we using? 💻 📡
+- Google Places for accurate location search.
+- Google Directions to get distance and directions between the origin and the destination.
+- Google Maps to render the map so that the user can visualize their ride.
+
+## Testing 📝
+We used Mocha and Chai for testing. Tests are stored in 'tests/' directory.
+
+To run tests for this project, clone the project and then type the command 'npm test' or 'mocha' into your console from the project root folder.
+
 ## Endpoints
 ### Rides 🚖
 #### '/rides' - create ONE ride
@@ -142,25 +175,6 @@ If successful, a JWT token will be created to keep them logged in for the durati
 The route will destroy the user's JWT token removing authorization to create and delete rides and interact with their communities.
 
 The user will be routed back to the root route.
-
-## API Integration - What APIs are we using? 💻 📡
-- Google Places for accurate location search.
-- Google Directions to get distance and directions between the origin and the destination.
-- Google Maps to render the map so that the user can visualize their ride.
-
-## Running 🏃
-If you would like to see the current, live version of Carfew, simply visit https://www.carfew.app/.
-
-If you would like to run the app on your local server, you can fork and/or clone the repo. From the root route, type 'npm run starter' and the 'npm run dev' to build the react app.
-
-Every subsequent time that you run the app without pulling updated code you can simply run 'npm run start'.
-
-If you pull updated code from the master branch, please use 'npm run dev' so that you re-build the react app again.
-
-## Testing 📝
-We used Mocha and Chai for testing. Tests are stored in 'tests/' directory.
-
-To run tests for this project, clone the project and then type the command 'npm test' or 'mocha' into your console from the project root folder.
 
 ## Additional Contact Info ☎
 
