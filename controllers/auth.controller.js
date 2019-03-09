@@ -24,8 +24,8 @@ module.exports = (app) => {
                 maxAge: 900000,
                 httpOnly: true
             });
-            // res.redirect('/dashboard');
-            res.redirect('/app');
+            res.redirect('/dashboard');
+            // res.redirect('/app');
         } catch (err) {
             console.log(err);
         }
@@ -66,8 +66,8 @@ module.exports = (app) => {
                 maxAge: 900000,
                 httpOnly: true
             });
-            // res.redirect('/dashboard');
-            return res.redirect('/app');
+            return res.redirect('/dashboard');
+            // return res.redirect('/app');
         });
     });
 
