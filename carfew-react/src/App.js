@@ -16,7 +16,7 @@ import MapComponent from './comp/MapComponent.jsx';
 import { Typography } from '@material-ui/core';
 import './index.css';
 
-window.API_URL = 'http://localhost:8081';
+window.API_URL = '';
 
 const styles = {
   root: {
