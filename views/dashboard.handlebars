@@ -1,0 +1,44 @@
+<!-- Importing dashboard css since this is the only file that uses it -->
+{{!-- <link rel="stylesheet" href="/css/dashboard.css"> --}}
+<div class="row">
+  <div class="scroll-box col-md-6">
+    <h3>Rides I've requested: </h3>
+    {{#if userRides}}
+    {{#each userRides}}
+    <p>Rider: {{this.rider.firstName}}</p>
+    <p>Driver: {{this.driver.firstName}}</p>
+    <p>Status: {{this.status}}</p>
+    <p>Destination: {{this.destination.formatted_address}}</p>
+    {{/each}}
+    {{else}}
+    <a href="/app" style="color: purple;">Click here to request a new ride.</a>
+    {{/if}}
+  </div>
+
+  <div class="scroll-box col-md-6">
+    <h3>Rides I've accepted: </h3>
+    {{#if userDrives}}
+    {{#each userDrives}}
+    <p>Rider: {{this.rider.firstName}}</p>
+    <p>Driver: {{this.driver.firstName}}</p>
+    <p>Status: {{this.status}}</p>
+    <p>Destination: {{this.destination.formatted_address}}</p>
+    {{/each}}
+    {{else}}
+    <a href="/app" style="color: purple;">Click here to browse rides requested by other drivers.</a>
+    {{/if}}
+  </div>
+</div>
+
+<div class="userInfo" style="margin-bottom: 20px">
+  <h2>Hello {{user.username}}!</h2>
+  <p id="firstName">{{user.firstName}}</p>
+  <p id="lastName">{{user.lastName}}</p>
+  <a href="/users/edit">
+    <!-- Edit or delete user profile here -->
+    <!-- <button id="editBtn">Edit User</button> -->
+  </a>
+  <a href="/logout">
+    <button>Logout</button>
+  </a>
+</div>

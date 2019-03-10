@@ -1,10 +1,14 @@
 <style type="text/css">
 
-.navBar {
+/*.navBar {
     text-align: center;
-
     font-size: 24px;
-}
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    left: 0%;
+    line-height: 75px;
+}*/
 
 h1 {
    color: #8C97D9;
@@ -16,13 +20,83 @@ h1 {
     background-color: #9B9B9B;
     text-align: center;
 }
+
 a {
     text-decoration: none;
 }
+
+.navBar {
+    background-color: #8C97D9;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    padding-left: -20px;
+    width: 100%;
+}
+
+.navBar > a {
+    font-family: 'Roboto-bold', sans-serif;
+    color: white;
+    position: absolute;
+    right: 0px;
+    width: 100%;
+    float: right;
+}
+
+.navBar > ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #8C97D9;
+  float: right;
+}
+
+.navBar > ul > li {
+  text-align: center;
+  display: inline-block;
+}
+
+.navBar > ul > li > a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 18px;
+  font-family: 'Roboto-bold', sans-serif;
+}
+
+
 </style>
 
-<div class="navBar">
+{{!-- <div class="navBar">
     <a href="/"><h1 id="title"><img src="/favicon_carfew.png"> Carfew</h1></a>
 
     <div class="firstLine"></div>
+</div> --}}
+
+<div class="navBar">
+<ul>
+  <li><a href="/">HOME</a></li>
+  <li><a href="/login">LOGIN</a></li>
+  <li><a href="/signup">SIGN UP</a></li>
+
+  {{#if currentUser}}
+    <li><a href="/app">RIDES</a></li>
+    <li><a href="/logout">LOGOUT</a></li>
+    <li><a href="/users/{{user._id}}`">PROFILE</a></li>
+  {{/if}}
+
+  <!-- <div class="dropdown">
+  <input class="dropdown-toggle" type="text">
+  <div class="dropdown-text">Profile</div>
+  <ul class="dropdown-content">
+    <li><a href="#">Settings</a></li>
+    <li><a href="#">Rides</a></li>
+    <li><a href="#">Log out</a></li>
+  </ul>
+
+</div> -->
+</ul>
 </div>

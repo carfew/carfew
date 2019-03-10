@@ -1,4 +1,3 @@
-/** Authorization routes here */
 const jwt = require('jsonwebtoken');
 const User = require('../models/user.model');
 
@@ -23,10 +22,10 @@ module.exports = (app) => {
             token = await jwt.sign({ _id: user._id }, process.env.SECRET, { expiresIn: '60 days' });
             res.cookie('rideToken', token, {
                 maxAge: 900000,
-                httpOnly: true,
+                httpOnly: true
             });
-            // res.redirect(`/users/${user._id}`);
-            res.redirect('/app');
+            res.redirect('/dashboard');
+            // res.redirect('/app');
         } catch (err) {
             console.log(err);
         }
@@ -34,43 +33,41 @@ module.exports = (app) => {
 
     app.post('/login', async (req, res) => {
         const {
-            username,
-            email,
-            phone,
-            password
+            username, email, phone, password
         } = req.body;
         // Find this username
         const user = await User.findOne({ username }, 'username password');
-        console.log(user);
         if (!user) {
             const user = await User.findOne({ email }, 'username password');
-            console.log(user);
             if (!user) {
                 const user = await User.findOne({ phone }, 'username password');
-                console.log(user);
             }
             return res.status(401).send({
-                message: 'Did you sign up? Wrong username or password!',
+                message: 'Did you sign up? Wrong username or password!'
             });
         }
         user.comparePassword(password, (err, isMatch) => {
             if (!isMatch) {
                 return res.status(401).send({
-                    message: 'Password is not valid!',
+                    message: 'Password is not valid!'
                 });
             }
-            const token = jwt.sign({
-                _id: user._id,
-                username: user.username,
-            }, process.env.SECRET, {
-                expiresIn: '60 days',
-            });
+            const token = jwt.sign(
+                {
+                    _id: user._id,
+                    username: user.username
+                },
+                process.env.SECRET,
+                {
+                    expiresIn: '60 days'
+                }
+            );
             res.cookie('rideToken', token, {
                 maxAge: 900000,
-                httpOnly: true,
+                httpOnly: true
             });
-            // res.redirect(`/users/${user._id}`);
-            return res.redirect('/app');
+            return res.redirect('/dashboard');
+            // return res.redirect('/app');
         });
     });
 
@@ -78,38 +75,6 @@ module.exports = (app) => {
     app.get('/login', (req, res) => {
         const currentUser = req.user;
         res.render('login', { currentUser });
-    });
-
-    // LOGIN POST; right now can only user username to login
-    app.post('/login', async (req, res) => {
-        const { username, password } = req.body;
-        // Find this username
-        const user = await User.findOne({ username }, 'username password');
-        console.log(user);
-        if (!user) {
-            return res.status(401).send({
-                message: 'Wrong username or password!',
-            });
-        }
-        user.comparePassword(password, (err, isMatch) => {
-            if (!isMatch) {
-                return res.status(401).send({
-                    message: 'Password is not valid!',
-                });
-            }
-            const token = jwt.sign({
-                _id: user._id,
-                username: user.username,
-            }, process.env.SECRET, {
-                expiresIn: '60 days',
-            });
-            res.cookie('rideToken', token, {
-                maxAge: 900000,
-                httpOnly: true,
-            });
-            // res.redirect(`/users/${user._id}`);
-            return res.redirect('/app');
-        });
     });
 
     // LOGOUT

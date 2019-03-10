@@ -6,6 +6,8 @@ const should = chai.should();
 
 chai.use(chaiHttp);
 
+const agent = chai.request.agent(server);
+
 /** Require Models */
 const Ride = require('../models/ride.model');
 
@@ -21,11 +23,10 @@ const testRide = {
 describe('Ride', () => {
     // TEST ROOT
     it('should display ALL rides on /rides GET', (done) => {
-        chai.request(server)
-            .get('/rides')
+        agent.get('/rides')
             .end((err, res) => {
                 res.should.have.status(200);
-                res.should.be.html;
+                res.should.be.json;
                 done();
             });
     });
@@ -33,12 +34,12 @@ describe('Ride', () => {
     // TEST SHOW
     it('should show ONE ride on /rides/<id> GET', (done) => {
         const ride = new Ride(testRide);
-        ride.save((err, data) => {
+        ride.save(() => {
             chai.request(server)
-                .get(`/rides/${data._id}`)
+                .get(`/rides/${ride._id}`)
                 .end((err, res) => {
                     res.should.have.status(200);
-                    res.should.be.html;
+                    res.should.be.json;
                     done();
                 });
         });
@@ -46,11 +47,12 @@ describe('Ride', () => {
 
     // TEST CREATE
     it('should create ONE ride on /rides', (done) => {
-        chai.request(server)
-            .post('/rides')
-            .send(testRide)
+        const testID = testRide._id;
+        console.log('TEST ID', testID)
+        agent.post('/rides')
+            .send(testID)
             .end((err, res) => {
-                console.log('success!')
+                console.log('success!');
                 res.should.have.status(200);
                 res.should.be.html;
                 done();
@@ -60,12 +62,11 @@ describe('Ride', () => {
     // TEST DELETE
     it('should delete ONE ride on /rides/<id> DELETE', (done) => {
         const ride = new Ride(testRide);
-        ride.save((err, data) => {
+        ride.save(() => {
             chai.request(server)
-                .delete(`/rides/${data._id}?_method=DELETE`)
+                .delete(`/rides/${ride._id}?_method=DELETE`)
                 .end((err, res) => {
                     res.should.have.status(200);
-                    res.should.be.html;
                     done();
                 });
         });

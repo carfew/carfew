@@ -34,10 +34,7 @@ const UserSchema = new Schema({
     },
     photoUrl: {
         type: String, select: false
-    },
-    notifications: [{
-        type: Schema.Types.Mixed, default: []
-    }],
+    }
 });
 
 UserSchema.plugin(uniqueValidator);

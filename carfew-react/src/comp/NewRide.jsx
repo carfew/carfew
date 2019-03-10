@@ -52,7 +52,7 @@ class CarfewWindow extends Component {
   };
 
   submitRide = async () => {
-    const res = await axios.post('/rides', {
+    const res = await axios.post(`${window.API_URL}/rides`, {
       origin: this.props.origin,
       destination: this.props.dest,
       pickupStart: this.state.pickupStart,
