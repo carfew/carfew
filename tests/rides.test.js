@@ -26,7 +26,7 @@ describe('Ride', () => {
         agent.get('/rides')
             .end((err, res) => {
                 res.should.have.status(200);
-                res.should.be.json;
+                res.should.be.html;
                 done();
             });
     });
@@ -47,6 +47,7 @@ describe('Ride', () => {
 
     // TEST CREATE
     it('should create ONE ride on /rides', (done) => {
+        const ride = new Ride(testRide)
         const testID = testRide._id;
         console.log('TEST ID', testID)
         agent.post('/rides')
