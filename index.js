@@ -42,7 +42,21 @@ const checkAuth = (req, res, next) => {
     next();
 };
 
+/** Custom user-checking middleware */
+const checkCurrentUser = (req, res, next) => {
+
+    if (req.user) {
+        currentUser = req.user;
+        // console.log('The currentUser is:', currentUser);
+    } else {
+        // console.log('There is no currentUser.');
+        currentUser = 'undefined';
+    }
+    next();
+};
+
 app.use(checkAuth);
+app.use(checkCurrentUser);
 
 /** Database connection */
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/carfew', {

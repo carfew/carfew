@@ -34,6 +34,13 @@ module.exports = (app) => {
         });
     });
 
+    app.get('/users/edit', async (req, res) => {
+        if (req.user) {
+            const user = await User.findById(req.user._id);
+            res.render(edit);
+        }
+    });
+
     // This should delete the the user and clear the user's session
     app.delete('/users/delete', (req, res) => {
         const decoded = jwt.verify(req.cookies.rideToken, process.env.SECRET);
