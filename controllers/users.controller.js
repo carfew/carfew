@@ -37,7 +37,9 @@ module.exports = (app) => {
     app.get('/users/edit', async (req, res) => {
         if (req.user) {
             const user = await User.findById(req.user._id);
-            res.render(edit);
+            res.render('edit', {
+                user
+            });
         }
     });
 
