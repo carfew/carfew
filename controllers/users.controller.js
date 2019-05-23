@@ -43,6 +43,8 @@ module.exports = (app) => {
         }
     });
 
+    
+
     // This should delete the the user and clear the user's session
     app.delete('/users/delete', (req, res) => {
         const decoded = jwt.verify(req.cookies.rideToken, process.env.SECRET);
