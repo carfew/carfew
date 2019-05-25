@@ -20,7 +20,7 @@
 * [Contact Info](https://github.com/carfew/carfew/tree/dev#additional-contact-info-)
 
 ## What is Carfew? 🚘
-Carfew is a new, innovative ride-sharing solution for those who want to meet new people 👋. With Carfew, you drive to make connections and meet people who like the same things that you do.
+Carfew is a new, innovative ride-sharing solution connecting carpoolers 👋. With Carfew, you drive to make connections and meet people who like the same things that you do and are going the same way that you are. 
 
 Connect with others over a mutual in-app community and request rides with people who are going the same way that you are. Its hitchhiking for the 21st century 👍.
 
