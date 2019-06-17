@@ -7,7 +7,7 @@
     "start": "node index.js",
     "test": "mocha --exit tests/*"
   },
-  "scripts": { 
+  "scripts": {
     "starter": "cd carfew-react && npm install",
     "build": "cd carfew-react && npm run build && cd ..",
     "start": "node index.js",
@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/carfew/carfew#readme",
   "dependencies": {
+    "axios": "^0.19.0",
     "bcrypt": "^3.0.3",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
@@ -34,7 +35,9 @@
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
     "express-handlebars": "^3.0.0",
+    "handlebars": "^4.1.2",
     "joi": "^14.3.1",
+    "js-yaml": "^3.13.1",
     "jsonwebtoken": "^8.4.0",
     "method-override": "^3.0.0",
     "mongoose": "^5.4.10",
