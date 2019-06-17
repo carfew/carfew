@@ -5,7 +5,11 @@ module.exports = (app) => {
     // SIGN-UP GET
     app.get('/sign-up', (req, res) => {
         const currentUser = req.user;
-        res.render('sign-up', { currentUser });
+        if (req.user) {
+            res.redirect('/dashboard')
+        } else {
+            res.render('sign-up', { currentUser });
+        }
     });
 
     // SIGN-UP POST; right now can only use username or email for sign-up
