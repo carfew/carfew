@@ -12,7 +12,7 @@
     "date-fns": "2.0.0-alpha.25",
     "geolib": "^2.0.24",
     "material-ui-pickers": "2.1.2",
-    "moment": "2.24.0",
+    "moment": "2.29.2",
     "react": "^16.7.0",
     "react-cookie": "^3.0.8",
     "react-dom": "^16.7.0",
